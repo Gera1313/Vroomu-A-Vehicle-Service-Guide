@@ -1,20 +1,37 @@
-var recallsAPI =
-  "https://api.nhtsa.gov/recalls/recallsByVehicle?make=volkswagen&model=jetta&modelYear=2015";
-
 var chosenVin = "3VWDB7AJ6HM326256";
-var model = "Jetta";
-var year = "2015";
-
-
+// var model = "Jetta";
+// var year = "2015";
 
 // Shorthand for $(document).ready(function() {});
 // This Function Ensures functions within are called once all the DOM elements have finished rendering.
 $(function () {
 
-    
-    function getRecallData(make, model, year) {
+    // Function Obtains Recall Data
+  function getRecallData(make, model, year) {
 
-    }
+    $.ajax({
+        url: "https://api.nhtsa.gov/recalls/recallsByVehicle?make=" + make + "&model=" + model + "&modelYear=" + year,
+        type: "GET",
+        dataType: "json",
+        success: function (recallData) {
+
+            console.log(recallData);
+
+            for (var i = 0; i < recallData.results.length; i++) {
+
+                console.log(recallData.results[i].ReportReceivedDate);
+                console.log(recallData.results[i].Summary);
+                console.log(recallData.results[i].Remedy);
+                console.log(recallData.results[i].NHTSACampaignNumber);
+            }
+        
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+          console.log(xhr.status);
+          console.log(thrownError);
+        },
+      });
+  }
 
   // Function Obtains Vehicle Information by Vin Number.
   function getVinData() {
@@ -49,23 +66,6 @@ $(function () {
     });
   }
 
-
   getVinData();
 });
-
-// function getApi() {
-//     fetch(vinApi)
-//     .then (function (response) {
-//         console.log(response);
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         console.log(data);
-
-//         console.log(info);
-//         console.log(vehicleInfo);
-//     });
-
-// }
-
-// getApi();
+// End of Script
