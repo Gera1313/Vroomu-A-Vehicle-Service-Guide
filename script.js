@@ -1,4 +1,20 @@
-var chosenVin = "3VWDB7AJ6HM326256";
+var vehicleFormEl = $("#vehicle-form");
+
+var vinChoiceEl = $("#vin-choice");
+
+var makeField = $("#make");
+var modelField = $("#model");
+var yearField = $("#year");
+var seriesField = $("#series");
+var bodyField = $("#body");
+var transField = $("#transmission");
+var driveField = $("#drive-type");
+var engineField = $("#engine");
+var fuelTypeField = $("#fuel-type");
+
+var submitBtn = $("#submitBtn");
+
+// var chosenVin = "3VWDB7AJ6HM326256";
 // var model = "Jetta";
 // var year = "2015";
 
@@ -6,7 +22,20 @@ var chosenVin = "3VWDB7AJ6HM326256";
 // This Function Ensures functions within are called once all the DOM elements have finished rendering.
 $(function () {
 
-    // Function Obtains Recall Data
+        // Appends data to the form ---------------------------------------------------------------
+    function appendFormData(vehicleData) {
+        $(makeField).val(vehicleData.make);
+        $(modelField).val(vehicleData.model);
+        $(yearField).val(vehicleData.year);
+        $(seriesField).val(vehicleData.series);
+        $(bodyField).val(vehicleData.body);
+        $(transField).val(vehicleData.trans);
+        $(driveField).val(vehicleData.drive);
+        $(engineField).val(vehicleData.cylinders);
+        $(fuelTypeField).val(vehicleData.fuel);
+    }
+
+    // Function Obtains Recall Data---------------------------------------------------------------
   function getRecallData(make, model, year) {
 
     $.ajax({
@@ -33,7 +62,7 @@ $(function () {
       });
   }
 
-  // Function Obtains Vehicle Information by Vin Number.
+  // Function Obtains Vehicle Information by Vin Number.-----------------------------------------------
   function getVinData() {
     $.ajax({
       url:
@@ -56,7 +85,7 @@ $(function () {
         };
 
         console.log(vehicleSpecs);
-        // appendFormData(vinData);
+        appendFormData(vehicleSpecs);
         getRecallData(vehicleSpecs.make, vehicleSpecs.model, vehicleSpecs.year);
       },
       error: function (xhr, ajaxOptions, thrownError) {
@@ -66,6 +95,15 @@ $(function () {
     });
   }
 
-  getVinData();
+    // Submit Button: Gets Chosen Vin.-----------------------------------------------
+  submitBtn.on('click', function(event) {
+    event.preventDefault();
+    chosenVin = $(vinChoiceEl).val().trim();
+    console.log(chosenVin);
+
+    getVinData(chosenVin);
+  });
+
+
 });
 // End of Script
