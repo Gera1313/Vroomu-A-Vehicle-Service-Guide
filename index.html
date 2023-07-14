@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Tailwind or some other Non-Bootstrap CSS Framwork: Goes Here -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Google Fonts CDN Link -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300&family=Ysabeau+Infant:wght@300&family=Ysabeau+Office&family=Ysabeau+SC:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Tailwind or some other Non-Bootstrap CSS Framwork: Goes Here -->
-
-  <!-- Google Fonts CDN Link -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300&family=Ysabeau+Infant:wght@300&family=Ysabeau+Office&family=Ysabeau+SC:wght@300&display=swap"
-    rel="stylesheet" />
-
-  <!-- CSS Custom Style  -->
-  <link rel="stylesheet" href="style.css" />
-  <title>Vroomu</title>
-</head>
+    <!-- CSS Custom Style  -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Vroomu</title>
+  </head>
 
 <body>
+
 
   <header>
     <h1>Vroomu</h1>
@@ -32,7 +31,7 @@
       <div id="vehicle-decode">
         <label>Decode Vin: </label>
         <input id="vin-input" placeholder="Enter Vehicle Vin Number">
-        <button id="decodeBtn">Decode Vin</button>
+        <button id="decodeBtn" class="button is-success">Decode Vin</button>
       </div>
       <div>
         <label>Search by Make, Model, Year: </label>
@@ -56,10 +55,10 @@
           <input readonly id="maketxt" placeholder="Make">
           <input readonly id="modeltxt" placeholder="Model">
         </div>
-        
-        <button id="maintBtn">Get Maintenance</button>
-        <button id="recallBtn">Get Recalls</button>
-        <button id="clearBtn">Clear</button>
+      
+        <button id="maintBtn" class="button is-success  ">Get Maintenance</button>
+        <button id="recallBtn" class="button is-success  ">Get Recalls</button>
+        <button id="clearBtn" class="button is-success  ">Clear</button>
       </div>
       <div>
         <textarea readonly id="series" placeholder="Series"></textarea>
