@@ -24,65 +24,8 @@
 
   <header>
     <h1>Vroomu</h1>
-  </header>
-
-  <main>
-    <!-- Some Form user can interact with goes here -->
-    <div>
-      <div id="vehicle-decode">
-        <label>Decode Vin: </label>
-        <input id="vin-input" placeholder="Enter Vehicle Vin Number">
-        <button id="decodeBtn">Decode Vin</button>
-      </div>
-      <div>
-        <label>Search by Make, Model, Year: </label>
-        <div id="dropdown" class="visible">
-          <!-- <input id="year" placeholder="Year"> -->
-          <select id="year">
-            <option class="yearDrop">Year</option>
-            <!-- Append JavaScript Options: Year -->
-          </select>
-          <select id="make">
-            <option class="makeDrop">Make</option>
-            <!-- Append JavaScript Options: Make -->
-          </select>
-          <select id="model">
-            <option class="modelDrop">Model</option>
-            <!-- Append JavaScript Options: Model -->
-          </select>
-        </div>
-        <div id="textbox" class="hidden">
-          <input readonly id="yeartxt" placeholder="Year">
-          <input readonly id="maketxt" placeholder="Make">
-          <input readonly id="modeltxt" placeholder="Model">
-        </div>
-        
-        <button id="maintBtn">Get Maintenance</button>
-        <button id="recallBtn">Get Recalls</button>
-        <button id="clearBtn">Clear</button>
-      </div>
-      <div>
-        <textarea readonly id="series" placeholder="Series"></textarea>
-        <textarea readonly id="body" placeholder="Body"></textarea>
-        <textarea readonly id="transmission" placeholder="Transmission Type"></textarea>
-        <textarea readonly id="drive-type" placeholder="Drive Type"></textarea>
-        <textarea readonly id="engine" placeholder="Engine Cylinders"></textarea>
-        <textarea readonly id="fuel-type" placeholder="Fuel Type"></textarea>
-      </div>
-    </div>
-
-    <div>
-      <h2>Maintenance Information</h2>
-      <div>
-        <h2>Vehicle Recalls</h2>
-      </div>
-
-  </main>
-
-  <footer class="main-footer">
-    <div class="container main-footer-container">
-      <a id="Contact Me">
-        <h3 class="footer-name">Contact us at</h3>
+    <nav>
+      <div class="container main-footer-container">
         <ul class="nav footer-nav">
           <li>
             <a href="https://github.com/Gera1313" target="_blank">
@@ -100,9 +43,68 @@
             </a>
           </li>
         </ul>
-      </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Some Form user can interact with goes here -->
+    <div>
+      <div id="vehicle-decode">
+        <label>Decode Vin: </label>
+        <input id="vin-input" placeholder="Enter Vehicle Vin Number">
+      </div>
+      <div id="container-form">
+        <div>
+          <label>Search by Make, Model, Year: </label>
+          <div id="dropdown" class="visible">
+            <!-- <input id="year" placeholder="Year"> -->
+            <select id="year">
+              <option class="yearDrop">Year</option>
+              <!-- Append JavaScript Options: Year -->
+            </select>
+            <select id="make">
+              <option class="makeDrop">Make</option>
+              <!-- Append JavaScript Options: Make -->
+            </select>
+            <select id="model">
+              <option class="modelDrop">Model</option>
+              <!-- Append JavaScript Options: Model -->
+            </select>
+          </div>
+          <div id="textbox" class="hidden">
+            <input readonly id="yeartxt" placeholder="Year">
+            <input readonly id="maketxt" placeholder="Make">
+            <input readonly id="modeltxt" placeholder="Model">
+          </div>
+        </div>
+
+        <div id="container-buttons">
+          <button id="decodeBtn">Decode Vin</button>
+          <button id="maintBtn">Get Maintenance</button>
+          <button id="recallBtn">Get Recalls</button>
+          <button id="clearBtn">Clear</button>
+        </div>
+
+      </div>
+      <div id="text-data" class="hidden">
+        <textarea readonly id="series" placeholder="Series"></textarea>
+        <textarea readonly id="body" placeholder="Body"></textarea>
+        <textarea readonly id="transmission" placeholder="Transmission Type"></textarea>
+        <textarea readonly id="drive-type" placeholder="Drive Type"></textarea>
+        <textarea readonly id="engine" placeholder="Engine Cylinders"></textarea>
+        <textarea readonly id="fuel-type" placeholder="Fuel Type"></textarea>
+      </div>
     </div>
-  </footer>
+
+    <div>
+      <h2>Maintenance Information</h2>
+      <div>
+        <h2>Vehicle Recalls</h2>
+      </div>
+
+  </main>
+
 
   <!-- jQuery CDN Link -->
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"

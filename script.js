@@ -89,6 +89,7 @@ $(function () {
     });
   }
 
+  
   function yearDropdown() {
     $.ajax({
       url: "https://api.nhtsa.gov/products/vehicle/modelYears?issueType=r",
@@ -215,6 +216,7 @@ $(function () {
     event.preventDefault();
     chosenVin = $(vinChoiceEl).val().trim();
     $("#textbox").removeClass("hidden").addClass("visible");
+    $("#text-data").removeClass("hidden").addClass("visible");
     $("#dropdown").removeClass("visible").addClass("hidden");
     $(yearField).val(null);
     $(makeField).val(null);
@@ -273,7 +275,7 @@ $(function () {
 //       authorization: "Basic MTMwMDZmOWItMzI4ZS00NGY2LTllNjUtZjU4M2IzNDU0ZjAy",
 //       "partner-token": "f6b5f0bcc60046e9b4ac768200062f4c",
 //     },
-//     type: "GET",
+//     type: "GET",`
 //     dataType: "json",
 //     success: function (data) {
 //       console.log(data);
