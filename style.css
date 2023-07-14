@@ -4,7 +4,9 @@
 div textarea {
   resize: none;
   overflow: hidden;
-  height: 15px;
+  height: 20px;
+  width: 7rem;
+  margin: 0.25rem 0 
 }
 
 fieldset {
@@ -26,4 +28,8 @@ label {
 
 .visible {
     display: contents;
+}
+
+.border {
+  border: 2px solid black;
 }
