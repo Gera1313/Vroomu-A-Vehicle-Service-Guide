@@ -248,6 +248,22 @@ $(function () {
     getRecallData(make, model, year);
   });
   
+  // Nav Git Hub Repository Function
+  $( function() {
+    $( "#accordion" ).accordion({
+      active: false,
+      collapsible: true
+    });
+  } );
+
+  // Nav History Function
+  $( function() {
+    $( "#second-accordion" ).accordion({
+      active: false,
+      collapsible: true
+    });
+  } );
+
   yearDropdown();
 
   dummyMaintenance();
