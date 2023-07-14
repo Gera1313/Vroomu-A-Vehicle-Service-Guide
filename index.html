@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Tailwind or some other Non-Bootstrap CSS Framwork: Goes Here -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <!-- Google Fonts CDN Link -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300&family=Ysabeau+Infant:wght@300&family=Ysabeau+Office&family=Ysabeau+SC:wght@300&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- CSS Custom Style  -->
-    <link rel="stylesheet" href="style.css" />
-    <title>Vroomu</title>
-  </head>
+  <!-- Tailwind or some other Non-Bootstrap CSS Framwork: Goes Here -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <!-- Google Fonts CDN Link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300&family=Ysabeau+Infant:wght@300&family=Ysabeau+Office&family=Ysabeau+SC:wght@300&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS Custom Style  -->
+  <link rel="stylesheet" href="style.css" />
+  <title>Vroomu</title>
+</head>
 
 <body>
   
@@ -27,8 +30,8 @@
     </div>
    
   <main>
-    <!-- Some Form user can interact with goes here -->
-    <div>
+    <!-- Vehicle Form Container-->
+    <div id="container-form">
       <div id="vehicle-decode">
         <label>Decode Vin: </label>
         <input id="vin-input" placeholder="Enter Vehicle Vin Number">
@@ -61,7 +64,21 @@
         <button id="recallBtn" class="button is-success is-small  ">Get Recalls</button>
         <button id="clearBtn" class="button is-success  is-small ">Clear</button>
       </div>
-      <div>
+    </div>
+    <!-- End of Vehicle Form Container -->
+
+    <!-- Button Container Here-->
+    <div id="container-buttons">
+      <button id="decodeBtn">Decode Vin</button>
+      <button id="maintBtn">Get Maintenance</button>
+      <button id="recallBtn">Get Recalls</button>
+      <button id="clearBtn">Clear</button>
+    </div>
+    <!-- End of Button Container-->
+
+    <!-- Vin Decoded Information Card -->
+    <div id="vin-information">
+      <div id="text-data" class="hidden">
         <textarea readonly id="series" placeholder="Series"></textarea>
         <textarea readonly id="body" placeholder="Body"></textarea>
         <textarea readonly id="transmission" placeholder="Transmission Type"></textarea>
@@ -70,39 +87,23 @@
         <textarea readonly id="fuel-type" placeholder="Fuel Type"></textarea>
       </div>
     </div>
+    <!-- End of Vin Decoded Information Card -->
 
-    <div>
-      <h2>Maintenance Information</h2>
-      <div>
-        <h2>Vehicle Recalls</h2>
-      </div>
+    <!-- Maintenance Information Card -->
+    <div id="maint-container">
+      <h2>Maintenance List: </h2>
+      <!-- Append JavaScript Here -->
+    </div>
+    <!-- End of Maintenance Information Card -->
 
+    <!-- Vehicle Recall Information Card -->
+    <div id="recall-container">
+      <h2>Recalls List:</h2>
+      <!-- Append JavaScript Here -->
+    </div>
+    <!-- End of Vehicle Recall Information Card -->
   </main>
 
-  <footer class="main-footer">
-    <div class="container main-footer-container">
-      <a id="Contact Me">
-        <h3 class="footer-name">Contact us at</h3>
-        <ul class="nav footer-nav">
-          <li>
-            <a href="https://github.com/Gera1313" target="_blank">
-              <img src="./Assets/Images/githubwhitebackground.png" width="40">
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/rune-encoder" target="_blank">
-              <img src="./Assets/Images/githubwhitebackground.png" width="40">
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/ariana-med" target="_blank">
-              <img src="./Assets/Images/githubwhitebackground.png" width="40">
-            </a>
-          </li>
-        </ul>
-      </a>
-    </div>
-  </footer>
 
   <!-- jQuery CDN Link -->
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
