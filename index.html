@@ -23,8 +23,8 @@
 
 <body>
   
-  <div class="columns">
-    <div class="column is-narrow ">
+  <div class="columns ">
+    <div class="column is-gapless is-multiline is-desktop is-narrow ">
       <div class="box" style="width:1000px;">
       Vroomu
     </div>
@@ -35,7 +35,6 @@
       <div id="vehicle-decode">
         <label>Decode Vin: </label>
         <input id="vin-input" placeholder="Enter Vehicle Vin Number">
-        <button id="decodeBtn" class="button is-success is-small ">Decode Vin</button>
       </div>
       <div>
         <label>Search by Make, Model, Year: </label>
@@ -60,19 +59,14 @@
           <input readonly id="modeltxt" placeholder="Model">
         </div>
       
-        <button id="maintBtn" class="button is-success is-small ">Get Maintenance</button>
-        <button id="recallBtn" class="button is-success is-small  ">Get Recalls</button>
-        <button id="clearBtn" class="button is-success  is-small ">Clear</button>
-      </div>
-    </div>
     <!-- End of Vehicle Form Container -->
 
     <!-- Button Container Here-->
     <div id="container-buttons">
-      <button id="decodeBtn">Decode Vin</button>
-      <button id="maintBtn">Get Maintenance</button>
-      <button id="recallBtn">Get Recalls</button>
-      <button id="clearBtn">Clear</button>
+      <button id="decodeBtn" class="button is-success ">Decode Vin</button>
+      <button id="maintBtn" class="button is-success ">Get Maintenance</button>
+      <button id="recallBtn" class="button is-success ">Get Recalls</button>
+      <button id="clearBtn" class="button is-success ">Clear</button>
     </div>
     <!-- End of Button Container-->
 
