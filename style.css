@@ -13,11 +13,6 @@ fieldset {
   border: 0;
 }
 
-label {
-  display: block;
-  margin: 30px 0 0 0;
-}
-
 .overflow {
   height: 200px;
 }
@@ -27,9 +22,25 @@ label {
 }
 
 .visible {
-    display: contents;
+    display: all;
+}
+
+#fixed-nav {
+  position: absolute;
+  width: 99%;
+  height: 2rem;
+}
+
+.frost {
+  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
 }
 
 .border {
   border: 2px solid black;
+}
+
+.border2 {
+  border: 2px solid rgb(231, 22, 22);
 }

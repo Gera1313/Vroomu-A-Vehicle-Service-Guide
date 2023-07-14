@@ -22,17 +22,55 @@
 </head>
 
 <body>
-  <header class="columns">
-    <div class="column is-narrow">
-      <div class="box" style="width: 1000px">Vroomu</div>
-    </div>
+  <header class="border has-text-centered">
+    <h1 class="border">Vroomu</h1>
+
+    <nav id="fixed-nav" class="border my-1 is-flex is-flex-wrap-wrap is-justify-content-end">
+      <div id="second-accordion" class="mx-4">
+        <h2>Search History</h2>
+
+        <div id="" class="mx-4 frost">
+          <h1>test</h1>
+          <!-- Append JavaScript History Here -->
+        </div>
+      </div>
+
+      <div id="accordion" class="mx-4 frost">
+        <h2>Contributors</h2>
+        <div>
+          <ul>
+            <li>
+              <a class="" href="https://github.com/rune-encoder">Christian Palacios</a>
+            </li>
+            <li>
+              <a class="" href="https://github.com/Gera1313">Gerardo Perez</a>
+            </li>
+            <li>
+              <a class="" href="https://github.com/ariana-med">Ariana Medrano</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
-  <main>
+  <div id="hero" class="border is-flex is-justify-content-space-between mx-2 my-6 p-4">
+    <p class="border mr-4 p-4">
+      Lorem Ipsum is the single greatest threat. We are not - we are not
+      keeping up with other websites. Lorem Ipsum best not make any more
+      threats to your website. It will be met with fire and fury like the
+      world has never seen. Does everybody know that pig named Lorem Ipsum? An
+      ‘extremely credible source’ has called my office and told me that Barack
+      Obama’s placeholder text is a fraud.
+    </p>
+    <img class="border" width="112" height="28" src="./Assets/Images/githubwhitebackground.png" />
+  </div>
+
+  <main class="border my-2">
     <!-- Button Container Here-->
-    <div id="container-form" class="border columns is-max-widescreen">
+    <div id="container-form" class="border2 columns my-3 mx-2 py-3 px-4">
       <div id="container-buttons"
-        class="mx-5 is-flex is-flex-direction-column is-justify-content-space-evenly border column is-2">
+        class="is-flex is-flex-direction-column is-justify-content-space-evenly border column is-2">
         <button id="decodeBtn" class="button my-1 is-success is-small">
           Decode Vin
         </button>
@@ -49,14 +87,14 @@
       <!-- End of Button Container-->
 
       <!-- Vehicle Form Container-->
-      <div class="border mx-5 column is-4 is-primary it-outlined">
-        <div id="vehicle-decode">
-          <label>Decode Vin: </label>
-          <input id="vin-input" placeholder="Enter Vehicle Vin Number" />
+      <div class="border mx-4 column is-4 ">
+        <div id="vehicle-decode" class="border is-flex is-flex-direction-column">
+          <h3 class="border m-1 p-1">Docode Vehicle's Vin: </h3>
+          <input id="vin-input" class="m-1 p-1" placeholder="Enter Vehicle Vin Number" />
         </div>
 
-        <div>
-          <label>Search by Make, Model, Year: </label>
+        <div class="border my-3 is-flex is-flex-direction-column">
+          <h3 class="p-1">Search by Year, Make, Model: </h3>
 
           <div id="dropdown" class="visible">
             <!-- <input id="year" placeholder="Year"> -->
@@ -72,30 +110,48 @@
               <option class="modelDrop">Model</option>
               <!-- Append JavaScript Options: Model -->
             </select>
+            <input id="mileage" class="my-1" placeholder="Mileage" />
           </div>
 
           <div id="textbox" class="hidden">
-            <input readonly id="yeartxt" placeholder="Year" />
-            <input readonly id="maketxt" placeholder="Make" />
-            <input readonly id="modeltxt" placeholder="Model" />
+            <input readonly id="yeartxt" class="my-1" placeholder="Year" />
+            <input readonly id="maketxt" class="my-1" placeholder="Make" />
+            <input readonly id="modeltxt" class="my-1" placeholder="Model" />
+            <input id="mileagetxt" class="my-1" placeholder="Mileage" />
           </div>
         </div>
       </div>
       <!-- End of Vehicle Form Container -->
 
       <!-- Vin Decoded Information Card -->
-      <div id="vin-information" class="border mx-5 column is-2">
+      <div id="vin-information" class="hidden border column">
         <div id="text-data" class="border is-flex is-flex-direction-column is-align-content-center">
-          <textarea readonly id="series" placeholder="Series"></textarea>
-          <textarea readonly id="body" placeholder="Body"></textarea>
-          <textarea readonly id="transmission" placeholder="Transmission Type"></textarea>
-          <textarea readonly id="drive-type" placeholder="Drive Type"></textarea>
-          <textarea readonly id="engine" placeholder="Engine Cylinders"></textarea>
-          <textarea readonly id="fuel-type" placeholder="Fuel Type"></textarea>
+          <h3 class="border m-1 p-1" width="100">Vehicle Specs</h3>
+          <div class="is-flex is-flex-direction-row is-justify-content-space-evenly">
+            <div class="is-flex is-flex-direction-column">
+              <textarea readonly id="series" placeholder="Series"></textarea>
+              <textarea readonly id="body" placeholder="Body"></textarea>
+              <textarea readonly id="transmission" placeholder="Transmission Type"></textarea>
+              <textarea readonly id="drive-type" placeholder="Drive Type"></textarea>
+              <textarea readonly id="engine" placeholder="Engine Cylinders"></textarea>
+              <textarea readonly id="fuel-type" placeholder="Fuel Type"></textarea>
+            </div>
+            <div>
+              <img class="border" width="112" height="28" src="./Assets/Images/githubwhitebackground.png" />
+            </div>
+          </div>
         </div>
       </div>
+      <!-- End of Vin Decoded Information Card -->
+      <p class="visible border column">
+        Lorem Ipsum is the single greatest threat. We are not - we are not
+        keeping up with other websites. Lorem Ipsum best not make any more
+        threats to your website. It will be met with fire and fury like the
+        world has never seen. Does everybody know that pig named Lorem Ipsum? An
+        ‘extremely credible source’ has called my office and told me that Barack
+        Obama’s placeholder text is a fraud.
+      </p>
     </div>
-    <!-- End of Vin Decoded Information Card -->
 
     <!-- Maintenance Information Card -->
     <div id="maint-container">
