@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- Tailwind or some other Non-Bootstrap CSS Framwork: Goes Here -->
-   
+
     <!-- Google Fonts CDN Link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,43 +16,102 @@
     <title>Vroomu</title>
   </head>
 
-  <body>
+<body>
 
     <header>
-      <h1>Vroomu</h1>
       <!-- Title and Hero Image go here -->
     </header>
 
-    <main>
-      <!-- Some Form user can interact with goes here -->
-      <form id="vehicle-form">
-        <input id="vin-choice" placeholder="Enter Vehicle Vin Number">
-        <input id="make" placeholder="Make">
-        <input id="model" placeholder="Model">
-        <input id="year" placeholder="Year">
-        <input id="series" placeholder="Series">
-        <input id="body" placeholder="Body">
-        <input id="transmission" placeholder="Transmission Type">
-        <input id="drive-type" placeholder="Drive Type">
-        <input id="engine" placeholder="Engine Cylinders">
-        <input id="fuel-type" placeholder="Fuel Type">
-        <button id="submitBtn">Submit</button>
-      </form>
+  <header>
+    <h1>Vroomu</h1>
+  </header>
 
-    </main>
+  <main>
+    <!-- Some Form user can interact with goes here -->
+    <div>
+      <div id="vehicle-decode">
+        <label>Decode Vin: </label>
+        <input id="vin-input" placeholder="Enter Vehicle Vin Number">
+        <button id="decodeBtn">Decode Vin</button>
+      </div>
+      <div>
+        <label>Search by Make, Model, Year: </label>
+        <div id="dropdown" class="visible">
+          <!-- <input id="year" placeholder="Year"> -->
+          <select id="year">
+            <option class="yearDrop">Year</option>
+            <!-- Append JavaScript Options: Year -->
+          </select>
+          <select id="make">
+            <option class="makeDrop">Make</option>
+            <!-- Append JavaScript Options: Make -->
+          </select>
+          <select id="model">
+            <option class="modelDrop">Model</option>
+            <!-- Append JavaScript Options: Model -->
+          </select>
+        </div>
+        <div id="textbox" class="hidden">
+          <input readonly id="yeartxt" placeholder="Year">
+          <input readonly id="maketxt" placeholder="Make">
+          <input readonly id="modeltxt" placeholder="Model">
+        </div>
+        
+        <button id="maintBtn">Get Maintenance</button>
+        <button id="recallBtn">Get Recalls</button>
+        <button id="clearBtn">Clear</button>
+      </div>
+      <div>
+        <textarea readonly id="series" placeholder="Series"></textarea>
+        <textarea readonly id="body" placeholder="Body"></textarea>
+        <textarea readonly id="transmission" placeholder="Transmission Type"></textarea>
+        <textarea readonly id="drive-type" placeholder="Drive Type"></textarea>
+        <textarea readonly id="engine" placeholder="Engine Cylinders"></textarea>
+        <textarea readonly id="fuel-type" placeholder="Fuel Type"></textarea>
+      </div>
+    </div>
 
-    <footer>
-        <!-- Maybe a footer goes here. We will see?  -->
-    </footer>
+    <div>
+      <h2>Maintenance Information</h2>
+      <div>
+        <h2>Vehicle Recalls</h2>
+      </div>
 
-    <!-- jQuery CDN Link -->
-    <script
-      src="https://code.jquery.com/jquery-3.7.0.min.js"
-      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-      crossorigin="anonymous"
-    ></script>
+  </main>
 
-    <!-- JavaScript Link -->
-    <script src="./script.js"></script>
-  </body>
+  <footer class="main-footer">
+    <div class="container main-footer-container">
+      <a id="Contact Me">
+        <h3 class="footer-name">Contact us at</h3>
+        <ul class="nav footer-nav">
+          <li>
+            <a href="https://github.com/Gera1313" target="_blank">
+              <img src="./Assets/Images/githubwhitebackground.png" width="40">
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/rune-encoder" target="_blank">
+              <img src="./Assets/Images/githubwhitebackground.png" width="40">
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ariana-med" target="_blank">
+              <img src="./Assets/Images/githubwhitebackground.png" width="40">
+            </a>
+          </li>
+        </ul>
+      </a>
+    </div>
+  </footer>
+
+  <!-- jQuery CDN Link -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <!-- JavaScript Link -->
+  <script src="./script.js"></script>
+</body>
+
 </html>
