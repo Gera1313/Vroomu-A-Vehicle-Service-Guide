@@ -215,15 +215,17 @@ $(function () {
   decodeBtn.on("click", function (event) {
     event.preventDefault();
     chosenVin = $(vinChoiceEl).val().trim();
-    $("#textbox").removeClass("hidden").addClass("visible");
-    $("#text-data").removeClass("hidden").addClass("visible");
     $("#dropdown").removeClass("visible").addClass("hidden");
+    $("#textbox").removeClass("hidden").addClass("visible");
+    $("#instructions").removeClass("visible").addClass("hidden");
+    $("#vin-information").removeClass("hidden").addClass("visible");
     $(yearField).val(null);
     $(makeField).val(null);
     $(modelField).val(null);
     getVinData(chosenVin);
   });
 
+  // Recall Button: Obtain Recall Information.
   recallBtn.on("click", function (event) {
     event.preventDefault();
 

@@ -1,6 +1,5 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-
 div textarea {
   resize: none;
   overflow: hidden;
@@ -43,4 +42,31 @@ fieldset {
 
 .border2 {
   border: 2px solid rgb(231, 22, 22);
+}
+
+.border3 {
+  border: 2px solid rgb(38, 196, 77);
+}
+
+.recall-header,
+.maint-header,
+.due-maint {
+  text-align: center;
+}
+
+.recall-item {
+  border: 2px solid rgb(38, 196, 77);
+  padding: 1rem;
+}
+
+.maint-section {
+  border: 2px solid rgb(38, 196, 77);
+  padding: 1rem;
+  margin:  20px 10px 10px 10px; 
+}
+
+.maint-list {
+  border: 2px solid rgb(29, 116, 216);
+  padding: 10px;
+  margin: 10px;
 }
