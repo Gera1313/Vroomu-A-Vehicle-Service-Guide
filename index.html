@@ -1,74 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- Tailwind or some other Non-Bootstrap CSS Framwork: Goes Here -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- Google Fonts CDN Link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300&family=Ysabeau+Infant:wght@300&family=Ysabeau+Office&family=Ysabeau+SC:wght@300&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Tailwind or some other Non-Bootstrap CSS Framwork: Goes Here -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
 
-    <!-- CSS Custom Style  -->
-    <link rel="stylesheet" href="style.css" />
-    <title>Vroomu</title>
-  </head>
+  <!-- Google Fonts CDN Link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300&family=Ysabeau+Infant:wght@300&family=Ysabeau+Office&family=Ysabeau+SC:wght@300&display=swap"
+    rel="stylesheet" />
 
-  <body>
-    <header class="border has-text-centered">
-      <h1 class="border py-5 m-4 has-background-white">Vroomu</h1>
+  <!-- CSS Custom Style  -->
+  <link rel="stylesheet" href="style.css" />
+  <title>Vroomu</title>
+</head>
 
-      <nav
-        id="fixed-nav"
-        class="border my-1 is-flex is-flex-wrap-wrap is-justify-content-end"
-      >
-        <div id="second-accordion" class="mx-4">
-          <h2><span class="nav-hover">Search History</span></h2>
+<body>
+  <header class="has-text-centered header-img">
+    <h1 class="box tint is-size-3 py-3 m-4 has-text-white">Vroomu</h1>
 
-          <div id="" class="mx-4 frost">
-            <h1>test</h1>
-            <!-- Append JavaScript History Here -->
-          </div>
+    <nav id="fixed-nav" class="has-background-white my-1 is-flex is-flex-wrap-wrap is-justify-content-end">
+      <div id="second-accordion" class="mx-4">
+        <h2><span class="nav-hover">Search History</span></h2>
+
+        <div id="" class="mx-4 tint">
+          <h1>test</h1>
+          <!-- Append JavaScript History Here -->
         </div>
+      </div>
 
-        <div id="accordion" class="mx-4 frost">
-          <h2 <span class="nav-hover">Contributors</span></h2>
-          <div>
-            <ul>
-              <li>
-                <a class="" href="https://github.com/rune-encoder"
-                  >Christian Palacios</a
-                >
-              </li>
-              <li>
-                <a class="" href="https://github.com/Gera1313">Gerardo Perez</a>
-              </li>
-              <li>
-                <a class="" href="https://github.com/ariana-med"
-                  >Ariana Medrano</a
-                >
-              </li>
-            </ul>
-          </div>
+      <div id="accordion" class="mx-4">
+        <h2><span class="nav-hover">Contributors</span></h2>
+        <div>
+          <ul>
+            <li>
+              <a class="" href="https://github.com/rune-encoder">Christian Palacios</a>
+            </li>
+            <li>
+              <a class="" href="https://github.com/Gera1313">Gerardo Perez</a>
+            </li>
+            <li>
+              <a class="" href="https://github.com/ariana-med">Ariana Medrano</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 
-    <div
-      id="hero"
-      class="border is-flex is-justify-content-space-between mx-2 my-6 p-4"
-    >
-      <p class="border mr-4 p-4">
+  <div id="hero" class="box is-flex is-justify-content-space-between mx-2 mt-6 p-4">
+    <div class="tint mr-4 p-4 box">
+      <p class="box text-card has-text-black">
         Lorem Ipsum is the single greatest threat. We are not - we are not
         keeping up with other websites. Lorem Ipsum best not make any more
         threats to your website. It will be met with fire and fury like the
@@ -76,228 +64,191 @@
         ‘extremely credible source’ has called my office and told me that Barack
         Obama’s placeholder text is a fraud.
       </p>
-      <img
-        class="border"
-        width="112"
-        height="28"
-        src="./Assets/Images/githubwhitebackground.png"
-      />
+    </div>
+    <img class="border" width="112" height="28" src="./Assets/Images/githubwhitebackground.png" />
+  </div>
+
+  <main class="my-3">
+    <!-- Button Container Here-->
+    <div id="container-form" class="box card-2 columns my-3 mx-2 py-3 px-4">
+      <div id="container-buttons"
+        class="tint box is-flex is-flex-direction-column my-2 is-justify-content-space-evenly column is-2">
+        <button id="decodeBtn" class="button my-1 is-success is-small">
+          Decode Vin
+        </button>
+        <button id="maintBtn" class="button my-1 is-success is-small">
+          Get Maintenance
+        </button>
+        <button id="recallBtn" class="button my-1 is-success is-small">
+          Get Recalls
+        </button>
+        <button id="clearBtn" class="button my-1 is-success is-small">
+          Clear
+        </button>
+      </div>
+      <!-- End of Button Container-->
+
+      <!-- Vehicle Form Container-->
+      <div class="tint box my-2 mx-4 column is-4">
+        <div id="vehicle-decode" class="text-card has-text-black box is-flex is-flex-direction-column">
+          <h3 class="b-bottom m-1 p-1">Docode Vehicle's Vin:</h3>
+          <input id="vin-input" class="m-1 p-1" placeholder="Enter Vehicle Vin Number" maxlength="17" />
+        </div>
+
+        <div class="box my-3 text-card has-text-black is-flex is-flex-direction-column">
+          <h3 class="b-bottom p-1">Search by Year, Make, Model:</h3>
+
+          <div id="dropdown" class="visible">
+            <!-- <input id="year" placeholder="Year"> -->
+            <select id="year">
+              <option class="yearDrop">Year</option>
+              <!-- Append JavaScript Options: Year -->
+            </select>
+            <select id="make">
+              <option class="makeDrop">Make</option>
+              <!-- Append JavaScript Options: Make -->
+            </select>
+            <select id="model">
+              <option class="modelDrop">Model</option>
+              <!-- Append JavaScript Options: Model -->
+            </select>
+            <input id="mileage" class="my-1" placeholder="Mileage" maxlength="6" />
+          </div>
+
+          <div id="textbox" class="hidden">
+            <input readonly id="yeartxt" class="my-1" placeholder="Year" />
+            <input readonly id="maketxt" class="my-1" placeholder="Make" />
+            <input readonly id="modeltxt" class="my-1" placeholder="Model" />
+            <input id="mileagetxt" class="my-1" placeholder="Mileage" maxlength="6" />
+          </div>
+        </div>
+      </div>
+      <!-- End of Vehicle Form Container -->
+
+      <!-- Vin Decoded Information Card -->
+      <div id="vin-information" class="hidden tint box my-2 column">
+        <div id="text-data" class="box text-card has-text-black is-flex is-flex-direction-column is-align-content-center">
+          <h3 class="b-bottom m-1 p-1" width="100">Vehicle Specs</h3>
+          <div class="is-flex is-flex-direction-row is-justify-content-space-evenly">
+            <div class="is-flex is-flex-direction-column">
+              <textarea readonly id="series" placeholder="Series"></textarea>
+              <textarea readonly id="body" placeholder="Body"></textarea>
+              <textarea readonly id="transmission" placeholder="Transmission Type"></textarea>
+              <textarea readonly id="drive-type" placeholder="Drive Type"></textarea>
+              <textarea readonly id="engine" placeholder="Engine Cylinders"></textarea>
+              <textarea readonly id="fuel-type" placeholder="Fuel Type"></textarea>
+            </div>
+            <div>
+              <img class="border" width="112" height="28" src="./Assets/Images/githubwhitebackground.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Vin Decoded Information Card -->
+      <div id="instructions" class="visible box tint column my-2">
+        <div class="m-2 p-4 text-card has-text-black box">
+          <h3 class="b-bottom m-1 p-1">Instructions</h3>
+          <p>
+            Lorem Ipsum is the single greatest threat. We are not - we are not
+            keeping up with other websites. Lorem Ipsum best not make any more
+            threats to your website. It will be met with fire and fury like the
+            world has never seen. Does everybody know that pig named Lorem Ipsum?
+            An ‘extremely credible source’ has called my office and told me that
+            Barack Obama’s placeholder text is a fraud.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <main class="border my-2">
-      <!-- Button Container Here-->
-      <div id="container-form" class="box card-2 columns my-3 mx-2 py-3 px-4">
-        <div
-          id="container-buttons"
-          class="frost box is-flex is-flex-direction-column my-2 is-justify-content-space-evenly column is-2"
-        >
-          <button id="decodeBtn" class="button my-1 is-success is-small">
-            Decode Vin
-          </button>
-          <button id="maintBtn" class="button my-1 is-success is-small">
-            Get Maintenance
-          </button>
-          <button id="recallBtn" class="button my-1 is-success is-small">
-            Get Recalls
-          </button>
-          <button id="clearBtn" class="button my-1 is-success is-small">
-            Clear
-          </button>
+    <!-- Maintenance Information Card -->
+    <div id="maint-container" class="border2 my-3 mx-2 py-3 px-4">
+      <h2 class="maint-header">
+        Maintenance List for your [2016] [Ford] [F-150]
+      </h2>
+
+      <div class="maint-item columns">
+        <div class="maint-section column">
+          <h3 class="due-maint">Due Mileage: [20000]</h3>
+          <ul class="maint-list">
+            <li>Change Engine Oil and Filter</li>
+            <li>Rotate Tires</li>
+          </ul>
         </div>
-        <!-- End of Button Container-->
-
-        <!-- Vehicle Form Container-->
-        <div class="frost box my-2 mx-4 column is-4">
-          <div
-            id="vehicle-decode"
-            class="has-background-light box is-flex is-flex-direction-column"
-          >
-            <h3 class="b-bottom m-1 p-1">Docode Vehicle's Vin:</h3>
-            <input
-              id="vin-input"
-              class="m-1 p-1"
-              placeholder="Enter Vehicle Vin Number"
-              maxlength="17"
-            />
-          </div>
-
-          <div class="has-background-light box my-3 is-flex is-flex-direction-column">
-            <h3 class="p-1">Search by Year, Make, Model:</h3>
-
-            <div id="dropdown" class="visible">
-              <!-- <input id="year" placeholder="Year"> -->
-              <select id="year">
-                <option class="yearDrop">Year</option>
-                <!-- Append JavaScript Options: Year -->
-              </select>
-              <select id="make">
-                <option class="makeDrop">Make</option>
-                <!-- Append JavaScript Options: Make -->
-              </select>
-              <select id="model">
-                <option class="modelDrop">Model</option>
-                <!-- Append JavaScript Options: Model -->
-              </select>
-              <input id="mileage" class="my-1" placeholder="Mileage" maxlength="6" />
-            </div>
-
-            <div id="textbox" class="hidden">
-              <input readonly id="yeartxt" class="my-1" placeholder="Year" />
-              <input readonly id="maketxt" class="my-1" placeholder="Make" />
-              <input readonly id="modeltxt" class="my-1" placeholder="Model" />
-              <input id="mileagetxt" class="my-1" placeholder="Mileage" maxlength="6" />
-            </div>
-          </div>
+        <div class="maint-section column">
+          <h3 class="due-maint">Due Mileage: [30000]</h3>
+          <ul class="maint-list">
+            <li>Change Engine Oil and Filter</li>
+            <li>Rotate Tires</li>
+            <li>Change Brake Fluid"</li>
+          </ul>
         </div>
-        <!-- End of Vehicle Form Container -->
-
-        <!-- Vin Decoded Information Card -->
-        <div id="vin-information" class="hidden frost box my-2 column">
-          <div
-            id="text-data"
-            class="border is-flex is-flex-direction-column is-align-content-center"
-          >
-            <h3 class="border m-1 p-1" width="100">Vehicle Specs</h3>
-            <div
-              class="is-flex is-flex-direction-row is-justify-content-space-evenly"
-            >
-              <div class="is-flex is-flex-direction-column">
-                <textarea readonly id="series" placeholder="Series"></textarea>
-                <textarea readonly id="body" placeholder="Body"></textarea>
-                <textarea
-                  readonly
-                  id="transmission"
-                  placeholder="Transmission Type"
-                ></textarea>
-                <textarea
-                  readonly
-                  id="drive-type"
-                  placeholder="Drive Type"
-                ></textarea>
-                <textarea
-                  readonly
-                  id="engine"
-                  placeholder="Engine Cylinders"
-                ></textarea>
-                <textarea
-                  readonly
-                  id="fuel-type"
-                  placeholder="Fuel Type"
-                ></textarea>
-              </div>
-              <div>
-                <img
-                  class="border"
-                  width="112"
-                  height="28"
-                  src="./Assets/Images/githubwhitebackground.png"
-                />
-              </div>
-            </div>
-          </div>
+        <div class="maint-section column">
+          <h3 class="due-maint">Due Mileage: [40000]</h3>
+          <ul class="maint-list">
+            <li>Change Engine Oil and Filter</li>
+            <li>Replace Engine Air Filter</li>
+            <li>Replace Cabin Air Filter"</li>
+            <li>Replace Spark Plugs"</li>
+          </ul>
         </div>
-        <!-- End of Vin Decoded Information Card -->
-        <div id="instructions" class="visible box frost column my-2">
-        <p class="p-4 has-background-light box">
-          Lorem Ipsum is the single greatest threat. We are not - we are not
-          keeping up with other websites. Lorem Ipsum best not make any more
-          threats to your website. It will be met with fire and fury like the
-          world has never seen. Does everybody know that pig named Lorem Ipsum?
-          An ‘extremely credible source’ has called my office and told me that
-          Barack Obama’s placeholder text is a fraud.
+      </div>
+    </div>
+    <!-- End of Maintenance Information Card -->
+
+    <!-- Vehicle Recall Information Card -->
+    <div id="recall-container" class="border3 my-3 mx-2 py-3 px-4">
+      <h2 class="recall-header">
+        Recalls List for your [2016] [Ford] [F-150]
+      </h2>
+
+      <div class="recall-item">
+        <h3>Recall Date: [07/12/2010] Recall ID# [10V616000]</h3>
+        <p class="recall-problem">
+          Problem: [CHRYSLER IS RECALLING CERTAIN MODEL YEAR 2010-2011 DODGE
+          RAM TRUCKS MANUFACTURED FROM MARCH 2009 THROUGH OCTOBER 2010. SOME
+          VEHICLES EQUIPPED WITH DIESEL ENGINE AND A HYDROBOOST BRAKE SYSTEM
+          MAY BE EQUIPPED WITH A POWER STEERING RESERVOIR CAP WITH EXCESSIVE
+          VENT PRESSURE LEVELS THAT MAY RESULT IN BRAKE PEDALS THAT ARE SLOW
+          TO RETURN.]
+        </p>
+        <p class="recall-solution">
+          Solution: [CHRYSLER WILL NOTIFY OWNERS AND DEALERS WILL REPLACE THE
+          POWER STEERING RESERVOIR CAP FREE OF CHARGE. THE SAFETY RECALL IS
+          EXPECTED TO BEGIN DURING FEBRUARY 2011. OWNERS MAY CONTACT CHRYSLER
+          AT 1-800-853-1403.]
         </p>
       </div>
-      </div>
+      <!-- Append JavaScript Here -->
+    </div>
+    <!-- End of Vehicle Recall Information Card -->
+  </main>
 
-      <!-- Maintenance Information Card -->
-      <div id="maint-container" class="border2 my-3 mx-2 py-3 px-4">
-        <h2 class="maint-header">
-          Maintenance List for your [2016] [Ford] [F-150]
-        </h2>
-
-        <div class="maint-item columns">
-          <div class="maint-section column">
-            <h3 class="due-maint">Due Mileage: [20000]</h3>
-            <ul class="maint-list">
-              <li>Change Engine Oil and Filter</li>
-              <li>Rotate Tires</li>
-            </ul>
-          </div>
-          <div class="maint-section column">
-            <h3 class="due-maint">Due Mileage: [30000]</h3>
-            <ul class="maint-list">
-              <li>Change Engine Oil and Filter</li>
-              <li>Rotate Tires</li>
-              <li>Change Brake Fluid"</li>
-            </ul>
-          </div>
-          <div class="maint-section column">
-          <h3 class="due-maint">Due Mileage: [40000]</h3>
-            <ul class="maint-list">
-              <li>Change Engine Oil and Filter</li>
-              <li>Replace Engine Air Filter</li>
-              <li>Replace Cabin Air Filter"</li>
-              <li>Replace Spark Plugs"</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- End of Maintenance Information Card -->
-
-      <!-- Vehicle Recall Information Card -->
-      <div id="recall-container" class="border3 my-3 mx-2 py-3 px-4">
-        <h2 class="recall-header">
-          Recalls List for your [2016] [Ford] [F-150]
-        </h2>
-
-        <div class="recall-item">
-          <h3>Recall Date: [07/12/2010] Recall ID# [10V616000]</h3>
-          <p class="recall-problem">
-            Problem: [CHRYSLER IS RECALLING CERTAIN MODEL YEAR 2010-2011 DODGE
-            RAM TRUCKS MANUFACTURED FROM MARCH 2009 THROUGH OCTOBER 2010. SOME
-            VEHICLES EQUIPPED WITH DIESEL ENGINE AND A HYDROBOOST BRAKE SYSTEM
-            MAY BE EQUIPPED WITH A POWER STEERING RESERVOIR CAP WITH EXCESSIVE
-            VENT PRESSURE LEVELS THAT MAY RESULT IN BRAKE PEDALS THAT ARE SLOW
-            TO RETURN.]
-          </p>
-          <p class="recall-solution">
-            Solution: [CHRYSLER WILL NOTIFY OWNERS AND DEALERS WILL REPLACE THE
-            POWER STEERING RESERVOIR CAP FREE OF CHARGE. THE SAFETY RECALL IS
-            EXPECTED TO BEGIN DURING FEBRUARY 2011. OWNERS MAY CONTACT CHRYSLER
-            AT 1-800-853-1403.]
-          </p>
-        </div>
-        <!-- Append JavaScript Here -->
-      </div>
-      <!-- End of Vehicle Recall Information Card -->
-    </main>
-
-    <!-- Modal Section -->
-    <div class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content box has-background-white py-5 px-5">
-        <div class="px-6 py-2">
-          <h3 class="title b-bottom has-text-centered"> Error</h3>
-          <ol>
-            <li>If searching by Vin: Ensure correct Vin is filled out. <br> Note: Values accept partial Vin (Last 8 digits).</li>
-            <li>If searching by Vin: Ensure you have Decoded the Vin prior to obtaining Recall or Maintenance Information by pressing on the Decode Vin Button.</li>
-            <li>If searching by Year, Make, and Model: Ensure values on the form are completely filled out.</li>
-            <li>Mileage must be filled out to obtain Maintenance. It is not necessary for recalls.</li>
-          </ol>
-        </div>
+  <!-- Modal Section -->
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content box has-background-white py-5 px-5">
+      <div class="px-6 py-2">
+        <h3 class="title b-bottom has-text-centered"> Error</h3>
+        <ol>
+          <li>If searching by Vin: Ensure correct Vin is filled out. <br> Note: Values accept partial Vin (Last 8
+            digits).</li>
+          <li>If searching by Vin: Ensure you have Decoded the Vin prior to obtaining Recall or Maintenance Information
+            by pressing on the Decode Vin Button.</li>
+          <li>If searching by Year, Make, and Model: Ensure values on the form are completely filled out.</li>
+          <li>Mileage must be filled out to obtain Maintenance. It is not necessary for recalls.</li>
+        </ol>
       </div>
     </div>
+  </div>
 
-    <!-- jQuery CDN Link -->
-    <script
-      src="https://code.jquery.com/jquery-3.7.0.min.js"
-      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-      crossorigin="anonymous"
-    ></script>
+  <!-- jQuery CDN Link -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
-    <!-- JavaScript Link -->
-    <script src="./script.js"></script>
-  </body>
+  <!-- JavaScript Link -->
+  <script src="./script.js"></script>
+</body>
+
 </html>

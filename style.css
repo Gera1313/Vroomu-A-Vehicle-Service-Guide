@@ -1,5 +1,15 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
+html {
+  background: #232526; 
+  background: linear-gradient(to right, #180f0f, #4a4b37); 
+  
+}
+
+header h1 {
+  font-family: 'Ysabeau SC', sans-serif;
+}
+
 body {
   font-family: 'Ysabeau Office', sans-serif;
 }
@@ -30,14 +40,9 @@ fieldset {
 
 #fixed-nav {
   position: absolute;
+  border-radius: 4px;
   width: 99%;
   height: 2rem;
-}
-
-.frost {
-  background-color: rgba(255, 255, 255, 0.15);
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
 }
 
 .border {
@@ -76,7 +81,7 @@ fieldset {
 }
 
 .b-bottom {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid rgb(0, 0, 0);
 }
 
 .nav-hover {
@@ -92,6 +97,7 @@ fieldset {
   background-repeat: none;
   background-size: cover;
   background-blend-mode: multiply;
+  border: 0.1px solid rgb(46, 31, 25);
 }
 
 .card-2 {
@@ -99,4 +105,56 @@ fieldset {
   background-repeat: none;
   background-size: cover;
   background-blend-mode: multiply;
+  border: 0.1px solid rgb(46, 31, 25);
+}
+
+#hero {
+  background-image: url(./Assets/Images/hero.png), linear-gradient(to right, #fdfbfb, #fcfcfc);;
+  background-repeat: none;
+  background-size: cover;
+  background-blend-mode: luminosity;
+  border: 0.1px solid rgb(46, 31, 25);
+}
+
+.header-img {
+  background-image: url(./Assets/Images/header.png), linear-gradient(to right, #fdfbfb, #fcfcfc);;
+  background-repeat: none;
+  background-size: cover;
+  background-blend-mode: luminosity;
+  border: 0.1px solid rgb(46, 31, 25);
+}
+
+.tint {
+/* From https://css.glass */
+background: rgba(165, 154, 0, 0.2);
+border-radius: 20px;
+backdrop-filter: blur(5px);
+box-shadow: 0px 0px 40px 0px rgb(10, 10, 10);
+}
+
+.text-card {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.767) 0%, rgb(255, 255, 255) 100%);
+  border: 0.1px solid rgb(136, 93, 75);
+}
+
+textarea,
+input,
+select {
+  background: rgba(171, 185, 45, 0.596);
+  border-radius: 3px;
+  border: none;
+  outline: 0.1px solid rgba(24, 15, 15, 0);
+  transition: all 0.1s ease-out;
+}
+
+textarea:hover,
+input:hover,
+select:hover {
+  background: linear-gradient(to right, #9dafc9, #d4ddee);
+  border: 0.1px solid #858585;
+  background: #d4ddee;
+  outline-color: #8b8b8b;
+  outline-style: initial;
+  outline-offset: 3px;
+  outline-width: 5px;
 }
