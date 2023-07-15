@@ -26,14 +26,14 @@
 
   <body>
     <header class="border has-text-centered">
-      <h1 class="border">Vroomu</h1>
+      <h1 class="border py-5 m-4 has-background-white">Vroomu</h1>
 
       <nav
         id="fixed-nav"
         class="border my-1 is-flex is-flex-wrap-wrap is-justify-content-end"
       >
         <div id="second-accordion" class="mx-4">
-          <h2>Search History</h2>
+          <h2><span class="nav-hover">Search History</span></h2>
 
           <div id="" class="mx-4 frost">
             <h1>test</h1>
@@ -42,7 +42,7 @@
         </div>
 
         <div id="accordion" class="mx-4 frost">
-          <h2>Contributors</h2>
+          <h2 <span class="nav-hover">Contributors</span></h2>
           <div>
             <ul>
               <li>
@@ -86,10 +86,10 @@
 
     <main class="border my-2">
       <!-- Button Container Here-->
-      <div id="container-form" class="border2 columns my-3 mx-2 py-3 px-4">
+      <div id="container-form" class="box card-2 columns my-3 mx-2 py-3 px-4">
         <div
           id="container-buttons"
-          class="is-flex is-flex-direction-column my-2 is-justify-content-space-evenly border column is-2"
+          class="frost box is-flex is-flex-direction-column my-2 is-justify-content-space-evenly column is-2"
         >
           <button id="decodeBtn" class="button my-1 is-success is-small">
             Decode Vin
@@ -107,12 +107,12 @@
         <!-- End of Button Container-->
 
         <!-- Vehicle Form Container-->
-        <div class="border my-2 mx-4 column is-4">
+        <div class="frost box my-2 mx-4 column is-4">
           <div
             id="vehicle-decode"
-            class="border is-flex is-flex-direction-column"
+            class="has-background-light box is-flex is-flex-direction-column"
           >
-            <h3 class="border m-1 p-1">Docode Vehicle's Vin:</h3>
+            <h3 class="b-bottom m-1 p-1">Docode Vehicle's Vin:</h3>
             <input
               id="vin-input"
               class="m-1 p-1"
@@ -121,7 +121,7 @@
             />
           </div>
 
-          <div class="border my-3 is-flex is-flex-direction-column">
+          <div class="has-background-light box my-3 is-flex is-flex-direction-column">
             <h3 class="p-1">Search by Year, Make, Model:</h3>
 
             <div id="dropdown" class="visible">
@@ -152,7 +152,7 @@
         <!-- End of Vehicle Form Container -->
 
         <!-- Vin Decoded Information Card -->
-        <div id="vin-information" class="hidden border my-2 column">
+        <div id="vin-information" class="hidden frost box my-2 column">
           <div
             id="text-data"
             class="border is-flex is-flex-direction-column is-align-content-center"
@@ -197,7 +197,8 @@
           </div>
         </div>
         <!-- End of Vin Decoded Information Card -->
-        <p id="instructions" class="visible border column my-2">
+        <div id="instructions" class="visible box frost column my-2">
+        <p class="p-4 has-background-light box">
           Lorem Ipsum is the single greatest threat. We are not - we are not
           keeping up with other websites. Lorem Ipsum best not make any more
           threats to your website. It will be met with fire and fury like the
@@ -205,6 +206,7 @@
           An ‘extremely credible source’ has called my office and told me that
           Barack Obama’s placeholder text is a fraud.
         </p>
+      </div>
       </div>
 
       <!-- Maintenance Information Card -->
