@@ -1,24 +1,24 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
 html {
-  background: #232526; 
-  background: linear-gradient(to right, #180f0f, #4a4b37); 
+  background: #232526;
+  background: linear-gradient(to right, #180f0f, #4a4b37);
 }
 
 header h1 {
-  font-family: 'Ysabeau SC', sans-serif;
+  font-family: "Ysabeau SC", sans-serif;
 }
 
 h2,
 h3,
 h4 {
   font-size: 130%;
-  font-family: 'Ysabeau Office', sans-serif;
+  font-family: "Ysabeau Office", sans-serif;
 }
 
 p,
-button{
-  font-family: 'Roboto', sans-serif;
+button {
+  font-family: "Roboto", sans-serif;
 }
 
 div textarea {
@@ -26,7 +26,7 @@ div textarea {
   overflow: hidden;
   height: 20px;
   width: 7rem;
-  margin: 0.25rem 0 
+  margin: 0.25rem 0;
 }
 
 fieldset {
@@ -38,11 +38,11 @@ fieldset {
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .visible {
-    display: all;
+  display: all;
 }
 
 #fixed-nav {
@@ -75,7 +75,7 @@ fieldset {
 .maint-section {
   border: 2px solid rgb(38, 196, 77);
   padding: 1rem;
-  margin:  20px 10px 10px 10px; 
+  margin: 20px 10px 10px 10px;
 }
 
 .maint-list {
@@ -90,7 +90,7 @@ fieldset {
 
 .nav-hover {
   background: rgba(156, 156, 156, 0.637);
-  background-blend-mode:overlay;
+  background-blend-mode: overlay;
   cursor: pointer;
   padding: 3px 30px 3px 30px;
   border-radius: 5px 5px 0 0;
@@ -101,8 +101,12 @@ fieldset {
 
 a,
 #history {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.767) 0%, rgb(255, 255, 255) 100%);
-  color:#180f0f;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.767) 0%,
+    rgb(255, 255, 255) 100%
+  );
+  color: #180f0f;
   text-decoration: none;
   padding: 0 30px;
   margin: 0;
@@ -114,8 +118,7 @@ a,
 }
 
 a:hover,
-#history:hover
-.historyBtn:hover {
+#history:hover .historyBtn:hover {
   cursor: pointer;
   background: linear-gradient(to right, #9dafc9, #d4ddee);
   outline-color: #c9c9c9;
@@ -126,8 +129,12 @@ a:hover,
 }
 
 .nav-hover:hover {
-  color:#180f0f;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.767) 0%, rgb(255, 255, 255) 100%);
+  color: #180f0f;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.767) 0%,
+    rgb(255, 255, 255) 100%
+  );
   border: 0.1px solid rgb(136, 93, 75);
   outline-color: #8b8b8b;
   outline-style: initial;
@@ -167,7 +174,8 @@ a:hover,
 }
 
 #hero {
-  background-image: url(./Assets/Images/hero.png), linear-gradient(to right, #fdfbfb, #fcfcfc);
+  background-image: url(./Assets/Images/hero.png),
+    linear-gradient(to right, #fdfbfb, #fcfcfc);
   background-repeat: none;
   background-size: cover;
   background-blend-mode: luminosity;
@@ -175,7 +183,8 @@ a:hover,
 }
 
 .header-img {
-  background-image: url(./Assets/Images/header.png), linear-gradient(to right, #fdfbfb, #fcfcfc);
+  background-image: url(./Assets/Images/header.png),
+    linear-gradient(to right, #fdfbfb, #fcfcfc);
   background-repeat: none;
   background-size: cover;
   background-blend-mode: luminosity;
@@ -183,22 +192,26 @@ a:hover,
 }
 
 .tint {
-/* From https://css.glass */
-background: rgba(165, 154, 0, 0.2);
-border-radius: 20px;
-backdrop-filter: blur(5px);
-box-shadow: 0px 0px 40px 0px rgb(10, 10, 10);
+  /* From https://css.glass */
+  background: rgba(165, 154, 0, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 0px 40px 0px rgb(10, 10, 10);
 }
 
 .text-card {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.767) 0%, rgb(255, 255, 255) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.767) 0%,
+    rgb(255, 255, 255) 100%
+  );
   border: 0.1px solid rgb(136, 93, 75);
 }
 
 textarea,
 input,
 select {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background: rgba(171, 185, 45, 0.596);
   border-radius: 3px;
   border: none;

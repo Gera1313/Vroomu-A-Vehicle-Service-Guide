@@ -30,10 +30,13 @@ var maintBtn = $("#maintBtn");
 var recallBtn = $("#recallBtn");
 var clearBtn = $("#clearBtn");
 
-var historyEl = $('#history');
+// Saved History Container
+var historyEl = $("#history");
 
+// Saved History Data
 var saveHistoryData = [];
 
+// Local Storage Data
 var storedHistoryData = JSON.parse(localStorage.getItem("saveHistoryData"));
 
 var year = "";
@@ -44,6 +47,7 @@ var mileage = "";
 // Shorthand for $(document).ready(function() {});
 // This Function Ensures functions within are called once all the DOM elements have finished rendering.
 $(function () {
+  // Saves Users Data in Local Storage.
   function saveHistory(make, model, year, mileage) {
     var vehicleData = {
       make: make,
@@ -72,7 +76,7 @@ $(function () {
     }
   }
 
-
+  // Creates Buttons on the Nav that will display User's History
   function renderVehicleHistory() {
     for (var i = 0; i < saveHistoryData.length; i++) {
       var historyliCon = document.createElement("li");
@@ -314,6 +318,7 @@ $(function () {
     });
   }
 
+  // If there is saved Local Storage update our Save History Variable.
   if (storedHistoryData !== null) {
     saveHistoryData = storedHistoryData;
     renderVehicleHistory();
@@ -327,7 +332,8 @@ $(function () {
     getVinData(chosenVin);
   });
 
-  $('.historyBtn').on("click", function (event) {
+  // Search History Button: On Click - Add Values to Form.
+  $(".historyBtn").on("click", function (event) {
     event.preventDefault();
     $("#dropdown").removeClass("visible").addClass("hidden");
     $("#textbox").removeClass("hidden").addClass("visible");
@@ -365,7 +371,7 @@ $(function () {
       year = yearField.val();
     }
     $(historyEl).empty();
-    saveHistory(make, model, year, mileage)
+    saveHistory(make, model, year, mileage);
     // Runs Function to get Recall Data.
     getRecallData(make, model, year);
   });
@@ -399,10 +405,11 @@ $(function () {
       mileage = mileageField.val();
     }
     $(historyEl).empty();
-    saveHistory(make, model, year, mileage)
+    saveHistory(make, model, year, mileage);
     dummyMaintenance(make, model, year, mileage);
   });
 
+  // Resets our Default Homepage Layout and clears field values and local storage.
   clearBtn.on("click", function (event) {
     event.preventDefault();
     localStorage.clear();
@@ -437,8 +444,10 @@ $(function () {
     });
   });
 
+  // Renders our Year Dropdown Tab.
   yearDropdown();
 
+  // Clears modal by clicking  on the background.
   $(".modal-background").on("click", function () {
     $(".modal").removeClass("is-active");
   });
