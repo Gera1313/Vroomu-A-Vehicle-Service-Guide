@@ -43,6 +43,7 @@ fieldset {
   border-radius: 4px;
   width: 99%;
   height: 2rem;
+  z-index: 7;
 }
 
 .border {
@@ -85,11 +86,45 @@ fieldset {
 }
 
 .nav-hover {
+  background: rgba(156, 156, 156, 0.637);
+  background-blend-mode:overlay;
   cursor: pointer;
+  padding: 3px 30px 3px 30px;
+  border-radius: 5px 5px 0 0;
+  border: none;
+  outline: 0.1px solid rgba(24, 15, 15, 0);
+  transition: all 0.1s ease-out;
+}
+
+a,
+#history {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.767) 0%, rgb(255, 255, 255) 100%);
+  color:#180f0f;
+  text-decoration: none;
+  padding: 0 30px;
+  margin: 0;
+  z-index: 1;
+}
+
+a:hover,
+#history:hover {
+  background: linear-gradient(to right, #9dafc9, #d4ddee);
+  outline-color: #c9c9c9;
+  outline-style: initial;
+  outline-offset: 3px;
+  outline-width: 5px;
+  border: 0.4px solid #858585;
 }
 
 .nav-hover:hover {
-  background-color: aquamarine;
+  color:#180f0f;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.767) 0%, rgb(255, 255, 255) 100%);
+  border: 0.1px solid rgb(136, 93, 75);
+  outline-color: #8b8b8b;
+  outline-style: initial;
+  outline-offset: 3px;
+  outline-width: 5px;
+  border: 0.4px solid #858585;
 }
 
 .card {
@@ -109,7 +144,7 @@ fieldset {
 }
 
 #hero {
-  background-image: url(./Assets/Images/hero.png), linear-gradient(to right, #fdfbfb, #fcfcfc);;
+  background-image: url(./Assets/Images/hero.png), linear-gradient(to right, #fdfbfb, #fcfcfc);
   background-repeat: none;
   background-size: cover;
   background-blend-mode: luminosity;
@@ -117,7 +152,7 @@ fieldset {
 }
 
 .header-img {
-  background-image: url(./Assets/Images/header.png), linear-gradient(to right, #fdfbfb, #fcfcfc);;
+  background-image: url(./Assets/Images/header.png), linear-gradient(to right, #fdfbfb, #fcfcfc);
   background-repeat: none;
   background-size: cover;
   background-blend-mode: luminosity;
