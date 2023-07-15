@@ -28,6 +28,13 @@ var fuelTypeField = $("#fuel-type");
 var decodeBtn = $("#decodeBtn");
 var maintBtn = $("#maintBtn");
 var recallBtn = $("#recallBtn");
+var clearBtn = $("#clearBtn");
+
+var historyEl = $('#history');
+
+var saveHistoryData = [];
+
+var storedHistoryData = JSON.parse(localStorage.getItem("saveHistoryData"));
 
 var year = "";
 var make = "";
@@ -37,6 +44,59 @@ var mileage = "";
 // Shorthand for $(document).ready(function() {});
 // This Function Ensures functions within are called once all the DOM elements have finished rendering.
 $(function () {
+  function saveHistory(make, model, year, mileage) {
+    var vehicleData = {
+      make: make,
+      model: model,
+      year: year,
+      mileage: mileage,
+    };
+    if (saveHistoryData !== undefined) {
+      for (i = 0; i < saveHistoryData.length; i++) {
+        if (saveHistoryData[i].model.includes(vehicleData.model) === true) {
+          var duplicateVehicle = true;
+          break;
+        } else {
+          var duplicateVehicle = false;
+        }
+      }
+    }
+    if (duplicateVehicle === false || duplicateVehicle === undefined) {
+      saveHistoryData.push(vehicleData);
+      localStorage.setItem("saveHistoryData", JSON.stringify(saveHistoryData));
+      renderVehicleHistory();
+      // If the chosen city IS DUPLICATED do NOT store new data in local storage and clear and render history buttons.
+    } else {
+      $(historyEl).empty();
+      renderVehicleHistory();
+    }
+  }
+
+
+  function renderVehicleHistory() {
+    for (var i = 0; i < saveHistoryData.length; i++) {
+      var historyliCon = document.createElement("li");
+      var historyli = document.createElement("button");
+      historyli.setAttribute("class", "historyBtn");
+
+      historyli.dataset.make = saveHistoryData[i].make;
+      historyli.dataset.model = saveHistoryData[i].model;
+      historyli.dataset.year = saveHistoryData[i].year;
+      historyli.dataset.mileage = saveHistoryData[i].mileage;
+
+      historyli.textContent =
+        saveHistoryData[i].make +
+        " " +
+        saveHistoryData[i].model +
+        " " +
+        saveHistoryData[i].year +
+        " " +
+        saveHistoryData[i].mileage;
+      $(historyliCon).append(historyli);
+      $("#history").append(historyliCon);
+    }
+    return;
+  }
 
   // Renders options for Model Dropdown after the Make is Chosen.
   function modelDropdown() {
@@ -44,11 +104,15 @@ $(function () {
     make = makeField.val();
 
     $.ajax({
-      url: "https://api.nhtsa.gov/products/vehicle/models?modelYear=" + year + "&make=" + make + "&issueType=r",
+      url:
+        "https://api.nhtsa.gov/products/vehicle/models?modelYear=" +
+        year +
+        "&make=" +
+        make +
+        "&issueType=r",
       type: "GET",
       dataType: "json",
       success: function (modelData) {
-
         for (var i = 0; i < modelData.results.length; i++) {
           var options = document.createElement("option");
           $(options).addClass("modelDrop");
@@ -61,7 +125,7 @@ $(function () {
         console.log(ajaxOptions);
         console.log(thrownError);
         if (xhr.status !== 200) {
-          $(".modal").addClass("is-active")
+          $(".modal").addClass("is-active");
         }
         return;
       },
@@ -73,11 +137,13 @@ $(function () {
     year = yearField.val();
 
     $.ajax({
-      url: "https://api.nhtsa.gov/products/vehicle/makes?modelYear=" + year + "&issueType=r",
+      url:
+        "https://api.nhtsa.gov/products/vehicle/makes?modelYear=" +
+        year +
+        "&issueType=r",
       type: "GET",
       dataType: "json",
       success: function (makeData) {
-
         for (var i = 0; i < makeData.results.length; i++) {
           var options = document.createElement("option");
           $(options).addClass("makeDrop");
@@ -90,14 +156,13 @@ $(function () {
           $(".modelDrop").remove();
           modelDropdown();
         });
-
       },
       error: function (xhr, ajaxOptions, thrownError) {
         console.log(xhr.status);
         console.log(ajaxOptions);
         console.log(thrownError);
         if (xhr.status !== 200) {
-          $(".modal").addClass("is-active")
+          $(".modal").addClass("is-active");
         }
         return;
       },
@@ -111,7 +176,6 @@ $(function () {
       type: "GET",
       dataType: "json",
       success: function (yearData) {
-
         for (var i = yearData.results.length - 1; i >= 0; i--) {
           var options = document.createElement("option");
           $(options).addClass("yearDrop");
@@ -125,14 +189,13 @@ $(function () {
           $(".makeDrop").remove();
           makesDropdown();
         });
-
       },
       error: function (xhr, ajaxOptions, thrownError) {
         console.log(xhr.status);
         console.log(ajaxOptions);
         console.log(thrownError);
         if (xhr.status !== 200) {
-          $(".modal").addClass("is-active")
+          $(".modal").addClass("is-active");
         }
         return;
       },
@@ -143,21 +206,20 @@ $(function () {
   function dummyMaintenance(make, model, year, mileage) {
     // For rear function will need Year, Make, Model, Mileage
     var data = [
-       { desc: "Change Engine Oil and Filter", due_mileage: "20000" },
-       { desc: "Rotate Tires", due_mileage: "20000" },
-       { desc: "Change Engine Oil and Filter", due_mileage: "30000" },
-       { desc: "Change Brake Fluid", due_mileage: "30000" },
-       { desc: "Change Engine Oil and Filter", due_mileage: "40000" },
-       { desc: "Replace Engine Air Filter", due_mileage: "40000" },
-       { desc: "Replace Cabin Air Filter", due_mileage: "40000" },
-       { desc: "Replace Spark Plugs", due_mileage: "40000" },
+      { desc: "Change Engine Oil and Filter", due_mileage: "20000" },
+      { desc: "Rotate Tires", due_mileage: "20000" },
+      { desc: "Change Engine Oil and Filter", due_mileage: "30000" },
+      { desc: "Change Brake Fluid", due_mileage: "30000" },
+      { desc: "Change Engine Oil and Filter", due_mileage: "40000" },
+      { desc: "Replace Engine Air Filter", due_mileage: "40000" },
+      { desc: "Replace Cabin Air Filter", due_mileage: "40000" },
+      { desc: "Replace Spark Plugs", due_mileage: "40000" },
     ];
 
     for (var i = 0; i < data.length; i++) {
       console.log(data[i].due_mileage);
       console.log(data[i].desc);
     }
-    
   }
 
   // Obtains Recall Data and Information for Chosen Make, Model, Year---------------------------------------------------------
@@ -187,7 +249,7 @@ $(function () {
         console.log(ajaxOptions);
         console.log(thrownError);
         if (xhr.status !== 200) {
-          $(".modal").addClass("is-active")
+          $(".modal").addClass("is-active");
         }
         return;
       },
@@ -245,11 +307,16 @@ $(function () {
         console.log(ajaxOptions);
         console.log(thrownError);
         if (xhr.status !== 200) {
-          $(".modal").addClass("is-active")
+          $(".modal").addClass("is-active");
         }
         return;
       },
     });
+  }
+
+  if (storedHistoryData !== null) {
+    saveHistoryData = storedHistoryData;
+    renderVehicleHistory();
   }
 
   // Decode Vin Button: On Click - Decode Vehicle Vin.
@@ -258,6 +325,21 @@ $(function () {
     chosenVin = $(vinChoiceEl).val().trim();
 
     getVinData(chosenVin);
+  });
+
+  $('.historyBtn').on("click", function (event) {
+    event.preventDefault();
+    $("#dropdown").removeClass("visible").addClass("hidden");
+    $("#textbox").removeClass("hidden").addClass("visible");
+
+    $(yearField).val(null);
+    $(makeField).val(null);
+    $(modelField).val(null);
+
+    $(yearTxt).val(event.target.dataset.year);
+    $(makeTxt).val(event.target.dataset.make);
+    $(modelTxt).val(event.target.dataset.model);
+    $(mileageTxt).val(event.target.dataset.mileage);
   });
 
   // Recall Button: Obtain Recall Information.
@@ -282,14 +364,15 @@ $(function () {
     } else {
       year = yearField.val();
     }
-
-    // Runs Function to get Recall Data. 
+    $(historyEl).empty();
+    saveHistory(make, model, year, mileage)
+    // Runs Function to get Recall Data.
     getRecallData(make, model, year);
   });
 
+  // Maintenance Button: Obtain Maintenance Information.
   maintBtn.on("click", function (event) {
     event.preventDefault();
-
 
     // If statement checks both forms to see which one user used and obtains that value.
     if (makeField.val() === null) {
@@ -315,15 +398,34 @@ $(function () {
     } else {
       mileage = mileageField.val();
     }
-
+    $(historyEl).empty();
+    saveHistory(make, model, year, mileage)
     dummyMaintenance(make, model, year, mileage);
+  });
+
+  clearBtn.on("click", function (event) {
+    event.preventDefault();
+    localStorage.clear();
+    $(historyEl).empty();
+
+    $("#dropdown").removeClass("hidden").addClass("visible");
+    $("#textbox").removeClass("visible").addClass("hidden");
+    $("#instructions").removeClass("hidden").addClass("visible");
+    $("#vin-information").removeClass("visible").addClass("hidden");
+
+    $(yearField).val(null);
+    $(makeField).val(null);
+    $(modelField).val(null);
+    $(yearTxt).val(null);
+    $(makeTxt).val(null);
+    $(modelTxt).val(null);
   });
 
   // Navigation Contributors Dropdown.
   $(function () {
     $("#accordion").accordion({
       active: false,
-      collapsible: true
+      collapsible: true,
     });
   });
 
@@ -331,19 +433,17 @@ $(function () {
   $(function () {
     $("#second-accordion").accordion({
       active: false,
-      collapsible: true
+      collapsible: true,
     });
   });
 
   yearDropdown();
 
-  $(".modal-background").on ('click', function() {
-    $(".modal").removeClass("is-active")
+  $(".modal-background").on("click", function () {
+    $(".modal").removeClass("is-active");
   });
 });
 // End of Script.
-
-
 
 // DO NOT ERASE!!!!
 
