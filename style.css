@@ -109,8 +109,14 @@ a,
   z-index: 1;
 }
 
+.historyBtn {
+  border: none;
+}
+
 a:hover,
-#history:hover {
+#history:hover
+.historyBtn:hover {
+  cursor: pointer;
   background: linear-gradient(to right, #9dafc9, #d4ddee);
   outline-color: #c9c9c9;
   outline-style: initial;
