@@ -8,11 +8,13 @@ var vinChoiceEl = $("#vin-input");
 var makeField = $("#make");
 var modelField = $("#model");
 var yearField = $("#year");
+var mileageField = $("#mileage");
 
 // Make, Model, Year:  TextInput.
 var makeTxt = $("#maketxt");
 var modelTxt = $("#modeltxt");
 var yearTxt = $("#yeartxt");
+var mileageTxt = $("#mileagetxt");
 
 //Vin Data: No user input.
 var seriesField = $("#series");
@@ -35,6 +37,7 @@ var model = "";
 // This Function Ensures functions within are called once all the DOM elements have finished rendering.
 $(function () {  
 
+  // Renders options for Model Dropdown after the Make is Chosen.
   function modelDropdown() {
     year = yearField.val();
     make = makeField.val();
@@ -59,6 +62,7 @@ $(function () {
     });
   }
 
+  // Renders options for Makes Dropdown after Year is Chosen.
   function makesDropdown() {
     year = yearField.val();
 
@@ -89,7 +93,7 @@ $(function () {
     });
   }
 
-  
+  // Renders options for Year Dropdown.
   function yearDropdown() {
     $.ajax({
       url: "https://api.nhtsa.gov/products/vehicle/modelYears?issueType=r",
@@ -138,7 +142,7 @@ $(function () {
     console.log(data[0].due_mileage);
   }
 
-  // Function Obtains Recall Data---------------------------------------------------------------
+  // Obtains Recall Data and Information for Chosen Make, Model, Year
   function getRecallData(make, model, year) {
     $.ajax({
       url:
@@ -167,7 +171,7 @@ $(function () {
     });
   }
 
-  // Appends Vin data to the form ---------------------------------------------------------------
+  // Appends Vehicle's Vin Data to the Form
   function appendFormData(vehicleData) {
     $(yearTxt).val(vehicleData.year);
     $(makeTxt).val(vehicleData.make);
@@ -180,7 +184,7 @@ $(function () {
     $(fuelTypeField).val("Fuel Type: " + vehicleData.fuel);
   }
 
-  // Function Obtains Vehicle Information by Vin Number.-----------------------------------------------
+  // Function Obtains Vehicle Information by Vin Number
   function getVinData() {
     $.ajax({
       url:
@@ -194,14 +198,15 @@ $(function () {
           make: vinData.Results[7].Value,
           model: vinData.Results[9].Value,
           year: vinData.Results[10].Value,
-          series: vinData.Results[12].Value, // Ex. 1.4 TSI SE
-          body: vinData.Results[23].Value, // Body class.
-          trans: vinData.Results[49].Value, // Transmission: Manual or Auto
-          drive: vinData.Results[51].Value, // Ex. FWD, 4WD, AWD.
-          cylinders: vinData.Results[70].Value, // Cylinders in Engine
-          fuel: vinData.Results[77].Value, // Fuel Type: Gas , Diesel
+          series: vinData.Results[12].Value,
+          body: vinData.Results[23].Value, 
+          trans: vinData.Results[49].Value, 
+          drive: vinData.Results[51].Value,
+          cylinders: vinData.Results[70].Value, 
+          fuel: vinData.Results[77].Value, 
         };
 
+        // Runs Function to Append Vehicle's Vin Data to the Form
         appendFormData(vehicleSpecs);
       },
       error: function (xhr, ajaxOptions, thrownError) {
@@ -211,7 +216,7 @@ $(function () {
     });
   }
 
-  // Submit Button: Gets Chosen Vin.-----------------------------------------------
+  // Decode Vin Button: On Click - Decode Vehicle Vin.
   decodeBtn.on("click", function (event) {
     event.preventDefault();
     chosenVin = $(vinChoiceEl).val().trim();
@@ -229,6 +234,7 @@ $(function () {
   recallBtn.on("click", function (event) {
     event.preventDefault();
 
+    // If statement checks both forms to see which one user used and obtains that value.
     if (makeField.val() === null) {
       make = makeTxt.val().trim();
     } else {
@@ -247,10 +253,11 @@ $(function () {
       year = yearField.val();
     }
 
+    // Runs Function to get Recall Data. 
     getRecallData(make, model, year);
   });
   
-  // Nav Git Hub Repository Function
+  // Navigation Contributors Dropdown.
   $( function() {
     $( "#accordion" ).accordion({
       active: false,
@@ -258,7 +265,7 @@ $(function () {
     });
   } );
 
-  // Nav History Function
+  // Navigation Search History Dropdown.
   $( function() {
     $( "#second-accordion" ).accordion({
       active: false,
@@ -270,7 +277,9 @@ $(function () {
 
   dummyMaintenance();
 });
-// End of Script --------------------------------------------------------------------------------------------
+// End of Script.
+
+
 
 // DO NOT ERASE!!!!
 

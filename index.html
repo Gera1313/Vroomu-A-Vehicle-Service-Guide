@@ -89,7 +89,7 @@
       <div id="container-form" class="border2 columns my-3 mx-2 py-3 px-4">
         <div
           id="container-buttons"
-          class="is-flex is-flex-direction-column is-justify-content-space-evenly border column is-2"
+          class="is-flex is-flex-direction-column my-2 is-justify-content-space-evenly border column is-2"
         >
           <button id="decodeBtn" class="button my-1 is-success is-small">
             Decode Vin
@@ -107,7 +107,7 @@
         <!-- End of Button Container-->
 
         <!-- Vehicle Form Container-->
-        <div class="border mx-4 column is-4">
+        <div class="border my-2 mx-4 column is-4">
           <div
             id="vehicle-decode"
             class="border is-flex is-flex-direction-column"
@@ -117,6 +117,7 @@
               id="vin-input"
               class="m-1 p-1"
               placeholder="Enter Vehicle Vin Number"
+              maxlength="17"
             />
           </div>
 
@@ -137,21 +138,21 @@
                 <option class="modelDrop">Model</option>
                 <!-- Append JavaScript Options: Model -->
               </select>
-              <input id="mileage" class="my-1" placeholder="Mileage" />
+              <input id="mileage" class="my-1" placeholder="Mileage" maxlength="6" />
             </div>
 
             <div id="textbox" class="hidden">
               <input readonly id="yeartxt" class="my-1" placeholder="Year" />
               <input readonly id="maketxt" class="my-1" placeholder="Make" />
               <input readonly id="modeltxt" class="my-1" placeholder="Model" />
-              <input id="mileagetxt" class="my-1" placeholder="Mileage" />
+              <input id="mileagetxt" class="my-1" placeholder="Mileage" maxlength="6" />
             </div>
           </div>
         </div>
         <!-- End of Vehicle Form Container -->
 
         <!-- Vin Decoded Information Card -->
-        <div id="vin-information" class="hidden border column">
+        <div id="vin-information" class="hidden border my-2 column">
           <div
             id="text-data"
             class="border is-flex is-flex-direction-column is-align-content-center"
@@ -196,7 +197,7 @@
           </div>
         </div>
         <!-- End of Vin Decoded Information Card -->
-        <p id="instructions" class="visible border column">
+        <p id="instructions" class="visible border column my-2">
           Lorem Ipsum is the single greatest threat. We are not - we are not
           keeping up with other websites. Lorem Ipsum best not make any more
           threats to your website. It will be met with fire and fury like the
