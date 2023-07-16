@@ -1,19 +1,36 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
+html {
+  background: #232526;
+  background: linear-gradient(to right, #180f0f, #4a4b37);
+}
+
+header h1 {
+  font-family: "Ysabeau SC", sans-serif;
+}
+
+h2,
+h3,
+h4 {
+  font-size: 130%;
+  font-family: "Ysabeau Office", sans-serif;
+}
+
+p,
+button {
+  font-family: "Roboto", sans-serif;
+}
 
 div textarea {
   resize: none;
   overflow: hidden;
-  height: 15px;
+  height: 20px;
+  width: 7rem;
+  margin: 0.25rem 0;
 }
 
 fieldset {
   border: 0;
-}
-
-label {
-  display: block;
-  margin: 30px 0 0 0;
 }
 
 .overflow {
@@ -21,9 +38,195 @@ label {
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .visible {
-    display: contents;
+  display: all;
+}
+
+#fixed-nav {
+  position: absolute;
+  border-radius: 4px;
+  width: 99%;
+  height: 2rem;
+  z-index: 7;
+}
+
+.border2 {
+  border: 2px solid rgb(199, 186, 3);
+}
+
+.border3 {
+  border: 2px solid rgb(38, 196, 77);
+}
+
+.recall-header,
+.maint-header,
+.due-maint {
+  text-align: center;
+}
+
+.recall-item {
+  border: 2px solid rgb(38, 196, 77);
+  padding: 1rem;
+}
+
+.maint-section {
+  border: 2px solid rgb(38, 196, 77);
+  padding: 1rem;
+  margin: 20px 10px 10px 10px;
+}
+
+.maint-list {
+  border: 2px solid rgb(29, 116, 216);
+  padding: 10px;
+  margin: 10px;
+}
+
+.b-bottom {
+  border-bottom: 3px solid rgb(0, 0, 0);
+}
+
+.nav-hover {
+  background: rgba(156, 156, 156, 0.637);
+  background-blend-mode: overlay;
+  cursor: pointer;
+  padding: 3px 30px 3px 30px;
+  border-radius: 5px 5px 0 0;
+  border: none;
+  outline: 0.1px solid rgba(24, 15, 15, 0);
+  transition: all 0.1s ease-out;
+}
+
+a,
+#history {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.767) 0%,
+    rgb(255, 255, 255) 100%
+  );
+  color: #180f0f;
+  text-decoration: none;
+  padding: 0 30px;
+  margin: 0;
+  z-index: 1;
+}
+
+.historyBtn {
+  border: none;
+}
+
+a:hover,
+#history:hover .historyBtn:hover {
+  cursor: pointer;
+  background: linear-gradient(to right, #9dafc9, #d4ddee);
+  outline-color: #c9c9c9;
+  outline-style: initial;
+  outline-offset: 3px;
+  outline-width: 5px;
+  border: 0.4px solid #858585;
+}
+
+.nav-hover:hover {
+  color: #180f0f;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.767) 0%,
+    rgb(255, 255, 255) 100%
+  );
+  border: 0.1px solid rgb(136, 93, 75);
+  outline-color: #8b8b8b;
+  outline-style: initial;
+  outline-offset: 3px;
+  outline-width: 5px;
+  border: 0.4px solid #858585;
+}
+
+.hero-icon {
+  border-radius: 10px;
+  width: 10%;
+  height: 10%;
+  filter: sepia(50%);
+}
+
+.specs-img {
+  border-radius: 10px;
+  margin: 0 5px;
+  height: auto;
+  filter: sepia(50%);
+}
+
+.card {
+  background-image: url(./Assets/Images/card1.png);
+  background-repeat: none;
+  background-size: cover;
+  background-blend-mode: multiply;
+  border: 0.1px solid rgb(46, 31, 25);
+}
+
+.card-2 {
+  background-image: url(./Assets/Images/card2.png);
+  background-repeat: none;
+  background-size: cover;
+  background-blend-mode: multiply;
+  border: 0.1px solid rgb(46, 31, 25);
+}
+
+#hero {
+  background-image: url(./Assets/Images/hero.png),
+    linear-gradient(to right, #fdfbfb, #fcfcfc);
+  background-repeat: none;
+  background-size: cover;
+  background-blend-mode: luminosity;
+  border: 0.1px solid rgb(46, 31, 25);
+}
+
+.header-img {
+  background-image: url(./Assets/Images/header.png),
+    linear-gradient(to right, #fdfbfb, #fcfcfc);
+  background-repeat: none;
+  background-size: cover;
+  background-blend-mode: luminosity;
+  border: 0.1px solid rgb(46, 31, 25);
+}
+
+.tint {
+  /* From https://css.glass */
+  background: rgba(165, 154, 0, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 0px 40px 0px rgb(10, 10, 10);
+}
+
+.text-card {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.767) 0%,
+    rgb(255, 255, 255) 100%
+  );
+  border: 0.1px solid rgb(136, 93, 75);
+}
+
+textarea,
+input,
+select {
+  font-family: "Roboto", sans-serif;
+  background: rgba(171, 185, 45, 0.596);
+  border-radius: 3px;
+  border: none;
+  outline: 0.1px solid rgba(24, 15, 15, 0);
+  transition: all 0.1s ease-out;
+}
+
+textarea:hover,
+input:hover,
+select:hover {
+  background: linear-gradient(to right, #9dafc9, #d4ddee);
+  border: 0.1px solid #858585;
+  background: #d4ddee;
+  outline-color: #8b8b8b;
+  outline-style: initial;
+  outline-offset: 3px;
+  outline-width: 5px;
 }
