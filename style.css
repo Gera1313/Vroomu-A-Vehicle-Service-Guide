@@ -53,6 +53,39 @@ fieldset {
   z-index: 7;
 }
 
+
+.maint-header:hover{
+  background-color: antiquewhite;
+  }
+
+  .due-maint:hover{
+    background-color: antiquewhite;
+    } 
+
+.maint-list:hover{
+  background-color: antiquewhite;
+  }
+
+  .recall-header:hover{
+background-color: antiquewhite;
+  }
+
+  .recall-item:hover{
+    background-color: antiquewhite;
+      }
+
+  .recall-problem:hover{
+    background-color: antiquewhite;
+      }
+
+      .recall-problem{
+        margin: 3px;
+      }
+
+      .recall-solution:hover{
+        background-color: antiquewhite;
+          }
+
 .border2 {
   border: 2px solid rgb(199, 186, 3);
 }
