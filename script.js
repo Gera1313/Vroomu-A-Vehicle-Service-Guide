@@ -30,6 +30,9 @@ var maintBtn = $("#maintBtn");
 var recallBtn = $("#recallBtn");
 var clearBtn = $("#clearBtn");
 
+//Maintenance List Container:
+var maintEl = $("#maint-container");
+
 // Saved History Container
 var historyEl = $("#history");
 
@@ -38,6 +41,8 @@ var saveHistoryData = [];
 
 // Local Storage Data
 var storedHistoryData = JSON.parse(localStorage.getItem("saveHistoryData"));
+
+var increment = "";
 
 var year = "";
 var make = "";
@@ -220,9 +225,87 @@ $(function () {
       { desc: "Replace Spark Plugs", due_mileage: "40000" },
     ];
 
+    console.log('click');
+    increment = 0;
+
+    $(maintEl).empty();
+
+    var maintHeader = document.createElement("h2");
+    $(maintHeader).addClass("maint-header");
+    $(maintHeader).text("Maintenance List for your " + "year" + " " + "make" + " " + "model");
+    $(maintEl).append(maintHeader);
+
+    var maintItems = document.createElement("div");
+    $(maintItems).addClass("maint-item columns");
+    $(maintEl).append(maintItems);
+    
+    var maintSecOne = document.createElement("div");
+    $(maintSecOne).addClass("maint-section column");
+    $(maintItems).append(maintSecOne);
+
+    var headerOne = document.createElement("h3");
+    $(headerOne).addClass("due-maint");
+    $(maintSecOne).append(headerOne);
+    var secOneUl = document.createElement("ul");
+    $(secOneUl).addClass("maint-list");
+    $(maintSecOne).append(secOneUl);
+
+    var maintSecTwo = document.createElement("div");
+    $(maintSecTwo).addClass("maint-section column");
+    $(maintItems).append(maintSecTwo);
+
+    var headerTwo = document.createElement("h3");
+    $(headerTwo).addClass("due-maint");
+    $(maintSecTwo).append(headerTwo);
+    var secTwoUl = document.createElement("ul");
+    $(secTwoUl).addClass("maint-list");
+    $(maintSecTwo).append(secTwoUl);
+
+    var maintSecThree = document.createElement("div");
+    $(maintSecThree).addClass("maint-section column");
+    $(maintItems).append(maintSecThree);
+
+    var headerThree = document.createElement("h3");
+    $(headerThree).addClass("due-maint");
+    $(maintSecThree).append(headerThree);
+    var secThreeUl = document.createElement("ul");
+    $(secThreeUl).addClass("maint-list");
+    $(maintSecThree).append(secThreeUl);
+
     for (var i = 0; i < data.length; i++) {
-      console.log(data[i].due_mileage);
-      console.log(data[i].desc);
+      var listOne = document.createElement("li");
+      $(secOneUl).append(listOne);
+      $(listOne).text(data[i].desc);
+
+      if (data[i].due_mileage !== data[i + 1].due_mileage) {
+        $(headerOne).text("Due Mileage: " + data[i].due_mileage)
+        increment = i + 1;
+        break;
+      } else {
+        continue;
+      }
+    }
+    
+    for (var i = increment; i < data.length; i++) {
+      var listTwo = document.createElement("li");
+      $(secTwoUl).append(listTwo);
+      $(listTwo).text(data[i].desc);
+
+      if (data[i].due_mileage !== data[i + 1].due_mileage) {
+        $(headerTwo).text("Due Mileage: " + data[i].due_mileage)
+        increment = i + 1;
+        break;
+      } else {
+        continue;
+      }
+    }
+
+    for (var i = increment; i < data.length; i++) {
+      var listThree = document.createElement("li");
+      $(secThreeUl).append(listThree);
+      $(listThree).text(data[i].desc);
+
+      $(headerThree).text("Due Mileage: " + data[i].due_mileage)
     }
   }
 
@@ -332,9 +415,11 @@ $(function () {
     getVinData(chosenVin);
   });
 
-  // Search History Button: On Click - Add Values to Form.
-  $(".historyBtn").on("click", function (event) {
+  // Search History Area: On Click - Add Values to Form.
+  $(historyEl).on("click", function (event) {
     event.preventDefault();
+    if (!event.target.matches(".historyBtn")) return;
+
     $("#dropdown").removeClass("visible").addClass("hidden");
     $("#textbox").removeClass("hidden").addClass("visible");
 
