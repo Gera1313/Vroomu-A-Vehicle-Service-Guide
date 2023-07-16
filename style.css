@@ -54,7 +54,7 @@ fieldset {
 }
 
 .border2 {
-  border: 2px solid rgb(231, 22, 22);
+  border: 2px solid rgb(231, 182, 22);
 }
 
 .border3 {
@@ -65,6 +65,22 @@ fieldset {
 .maint-header,
 .due-maint {
   text-align: center;
+}
+
+.recall-header:hover{
+  background-color: antiquewhite;
+}
+.recall-item:hover{
+  background-color: antiquewhite;
+}
+.maint-header:hover{
+  background-color: antiquewhite;
+}
+.maint-list:hover{
+  background-color: antiquewhite;
+}
+.maint-section:hover{
+  background-color: antiquewhite;
 }
 
 .recall-item {
