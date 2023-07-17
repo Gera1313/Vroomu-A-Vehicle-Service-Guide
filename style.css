@@ -1,8 +1,7 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
 html {
-  background: #232526;
-  background: linear-gradient(to right, #180f0f, #4a4b37);
+  background: #000000;
 }
 
 header h1 {
@@ -53,21 +52,19 @@ fieldset {
   z-index: 7;
 }
 
-.border2 {
-  border: 2px solid rgb(231, 22, 22);
-}
-
-.border3 {
-  border: 2px solid rgb(38, 196, 77);
-}
-
 .recall-header,
 .maint-header,
 .due-maint {
   text-align: center;
 }
 
+#recall-container,
+#maint-container {
+  color: whitesmoke;
+}
+
 .recall-item {
+  margin: 10px 0;
   border: 2px solid rgb(38, 196, 77);
   padding: 1rem;
 }
@@ -79,9 +76,14 @@ fieldset {
 }
 
 .maint-list {
-  border: 2px solid rgb(29, 116, 216);
   padding: 10px;
   margin: 10px;
+}
+
+#maint-container,
+#recall-container {
+  background: linear-gradient(to right, #000000, #47441e);
+  border-radius: 5px;
 }
 
 .b-bottom {
@@ -157,12 +159,30 @@ a:hover,
   filter: sepia(50%);
 }
 
-.card {
-  background-image: url(./Assets/Images/card1.png);
+.recall-item {
+  background-image: url(./Assets/Images/background.png),
+    linear-gradient(to right, #202630d8, #8a8383bb);
   background-repeat: none;
   background-size: cover;
-  background-blend-mode: multiply;
+  background-blend-mode: color-burn;
   border: 0.1px solid rgb(46, 31, 25);
+  border-radius: 5px;
+}
+
+.recall-problem,
+.recall-solution {
+  margin: 25px 15px;
+}
+
+.card,
+.maint-section {
+  background-image: url(./Assets/Images/card1.png),
+    linear-gradient(to right, #000000, #292815);
+  background-repeat: none;
+  background-size: cover;
+  background-blend-mode: overlay;
+  border: 0.1px solid rgb(46, 31, 25);
+  border-radius: 5px;
 }
 
 .card-2 {
@@ -191,9 +211,12 @@ a:hover,
   border: 0.1px solid rgb(46, 31, 25);
 }
 
-.tint {
-  /* From https://css.glass */
-  background: rgba(165, 154, 0, 0.2);
+.tint,
+.maint-list,
+.recall-problem,
+.recall-solution {
+  /*Idea for Tint/Glass/Frosted From https://css.glass */
+  background: rgba(163, 153, 13, 0.2);
   border-radius: 20px;
   backdrop-filter: blur(5px);
   box-shadow: 0px 0px 40px 0px rgb(10, 10, 10);

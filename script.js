@@ -33,6 +33,9 @@ var clearBtn = $("#clearBtn");
 //Maintenance List Container:
 var maintEl = $("#maint-container");
 
+//Recall List Container
+var recallEl = $("#recall-container");
+
 // Saved History Container
 var historyEl = $("#history");
 
@@ -211,7 +214,127 @@ $(function () {
     });
   }
 
-  // DUMMY MAINTENANCE DATA. (Actual one commented out. Costs Credits. This will save us Credits until Launch).----------------
+  // Get Maintenance: Get Maintenance Data.
+  function getMaintenance(make, model, year, mileage) {
+    $.ajax({
+      url:
+        "http://api.carmd.com/v3.0/maint?year=" +
+        year +
+        "&make=" +
+        make +
+        "&model=" +
+        model +
+        "&mileage=" +
+        mileage +
+        "&unit=" +
+        "mi",
+      headers: {
+        "content-type": "application/json",
+        authorization: "Basic MTMwMDZmOWItMzI4ZS00NGY2LTllNjUtZjU4M2IzNDU0ZjAy",
+        "partner-token": "f6b5f0bcc60046e9b4ac768200062f4c",
+      },
+      type: "GET",
+      dataType: "json",
+      success: function (data) {
+        console.log(data);
+
+        increment = 0;
+
+        $(maintEl).empty();
+
+        var maintHeader = document.createElement("h2");
+        $(maintHeader).addClass("maint-header");
+        $(maintHeader).text(
+          "Maintenance List for your " + year + " " + make + " " + model
+        );
+        $(maintEl).append(maintHeader);
+
+        var maintItems = document.createElement("div");
+        $(maintItems).addClass("maint-item columns");
+        $(maintEl).append(maintItems);
+
+        var maintSecOne = document.createElement("div");
+        $(maintSecOne).addClass("maint-section column");
+        $(maintItems).append(maintSecOne);
+
+        var headerOne = document.createElement("h3");
+        $(headerOne).addClass("due-maint");
+        $(maintSecOne).append(headerOne);
+        var secOneUl = document.createElement("ul");
+        $(secOneUl).addClass("maint-list");
+        $(maintSecOne).append(secOneUl);
+
+        var maintSecTwo = document.createElement("div");
+        $(maintSecTwo).addClass("maint-section column");
+        $(maintItems).append(maintSecTwo);
+
+        var headerTwo = document.createElement("h3");
+        $(headerTwo).addClass("due-maint");
+        $(maintSecTwo).append(headerTwo);
+        var secTwoUl = document.createElement("ul");
+        $(secTwoUl).addClass("maint-list");
+        $(maintSecTwo).append(secTwoUl);
+
+        var maintSecThree = document.createElement("div");
+        $(maintSecThree).addClass("maint-section column");
+        $(maintItems).append(maintSecThree);
+
+        var headerThree = document.createElement("h3");
+        $(headerThree).addClass("due-maint");
+        $(maintSecThree).append(headerThree);
+        var secThreeUl = document.createElement("ul");
+        $(secThreeUl).addClass("maint-list");
+        $(maintSecThree).append(secThreeUl);
+
+        for (var i = 0; i < data.length; i++) {
+          var listOne = document.createElement("li");
+          $(secOneUl).append(listOne);
+          $(listOne).text(data[i].desc);
+
+          if (data[i].due_mileage !== data[i + 1].due_mileage) {
+            $(headerOne).text("Due Mileage: " + data[i].due_mileage);
+            increment = i + 1;
+            break;
+          } else {
+            continue;
+          }
+        }
+
+        for (var i = increment; i < data.length; i++) {
+          var listTwo = document.createElement("li");
+          $(secTwoUl).append(listTwo);
+          $(listTwo).text(data[i].desc);
+
+          if (data[i].due_mileage !== data[i + 1].due_mileage) {
+            $(headerTwo).text("Due Mileage: " + data[i].due_mileage);
+            increment = i + 1;
+            break;
+          } else {
+            continue;
+          }
+        }
+
+        for (var i = increment; i < data.length; i++) {
+          var listThree = document.createElement("li");
+          $(secThreeUl).append(listThree);
+          $(listThree).text(data[i].desc);
+
+          $(headerThree).text("Due Mileage: " + data[i].due_mileage);
+        }
+      },
+      error: function (xhr, ajaxOptions, thrownError) {
+        console.log(xhr.status);
+        console.log(ajaxOptions);
+        console.log(thrownError);
+        if (xhr.status !== 200) {
+          $(".modal").addClass("is-active");
+        }
+        return;
+      },
+    });
+  }
+
+  // // DUMMY MAINTENANCE DATA. (Actual one commented out. Costs Credits. This will save us Credits until Launch).----------------TEST--------------------
   function dummyMaintenance(make, model, year, mileage) {
     // For rear function will need Year, Make, Model, Mileage
     var data = [
@@ -225,20 +348,21 @@ $(function () {
       { desc: "Replace Spark Plugs", due_mileage: "40000" },
     ];
 
-    console.log('click');
     increment = 0;
 
     $(maintEl).empty();
 
     var maintHeader = document.createElement("h2");
     $(maintHeader).addClass("maint-header");
-    $(maintHeader).text("Maintenance List for your " + "year" + " " + "make" + " " + "model");
+    $(maintHeader).text(
+      "Maintenance List for your " + "year" + " " + "make" + " " + "model"
+    );
     $(maintEl).append(maintHeader);
 
     var maintItems = document.createElement("div");
     $(maintItems).addClass("maint-item columns");
     $(maintEl).append(maintItems);
-    
+
     var maintSecOne = document.createElement("div");
     $(maintSecOne).addClass("maint-section column");
     $(maintItems).append(maintSecOne);
@@ -278,21 +402,21 @@ $(function () {
       $(listOne).text(data[i].desc);
 
       if (data[i].due_mileage !== data[i + 1].due_mileage) {
-        $(headerOne).text("Due Mileage: " + data[i].due_mileage)
+        $(headerOne).text("Due Mileage: " + data[i].due_mileage);
         increment = i + 1;
         break;
       } else {
         continue;
       }
     }
-    
+
     for (var i = increment; i < data.length; i++) {
       var listTwo = document.createElement("li");
       $(secTwoUl).append(listTwo);
       $(listTwo).text(data[i].desc);
 
       if (data[i].due_mileage !== data[i + 1].due_mileage) {
-        $(headerTwo).text("Due Mileage: " + data[i].due_mileage)
+        $(headerTwo).text("Due Mileage: " + data[i].due_mileage);
         increment = i + 1;
         break;
       } else {
@@ -305,11 +429,11 @@ $(function () {
       $(secThreeUl).append(listThree);
       $(listThree).text(data[i].desc);
 
-      $(headerThree).text("Due Mileage: " + data[i].due_mileage)
+      $(headerThree).text("Due Mileage: " + data[i].due_mileage);
     }
   }
 
-  // Obtains Recall Data and Information for Chosen Make, Model, Year---------------------------------------------------------
+  // Obtains Recall Data and Information for Chosen Make, Model, Year
   function getRecallData(make, model, year) {
     $.ajax({
       url:
@@ -324,11 +448,48 @@ $(function () {
       success: function (recallData) {
         console.log(recallData);
 
+        $(recallEl).empty();
+
+        var recallHeader = document.createElement("h2");
+        $(recallHeader).addClass("recall-header");
+        $(recallHeader).text(
+          "Recalls List for your " + year + " " + make + " " + model
+        );
+        $(recallEl).append(recallHeader);
+
+        var recallItems = document.createElement("div");
+        $(recallItems).addClass("recall-item");
+        $(recallEl).append(recallItems);
+
         for (var i = 0; i < recallData.results.length; i++) {
           console.log(recallData.results[i].ReportReceivedDate);
           console.log(recallData.results[i].Summary);
           console.log(recallData.results[i].Remedy);
           console.log(recallData.results[i].NHTSACampaignNumber);
+
+          var recallDate = document.createElement("h3");
+          $(recallDate).text(
+            "Recall Date: " +
+              recallData.results[i].ReportReceivedDate +
+              " | " +
+              "Recall ID: " +
+              recallData.results[i].NHTSACampaignNumber
+          );
+          $(recallItems).append(recallDate);
+
+          var recallColumns = document.createElement("div");
+          $(recallColumns).addClass("columns");
+          $(recallItems).append(recallColumns);
+
+          var recallProblem = document.createElement("p");
+          $(recallProblem).addClass("recall-problem column");
+          $(recallProblem).text("Problem: " + recallData.results[i].Summary);
+          $(recallColumns).append(recallProblem);
+
+          var recallSolution = document.createElement("p");
+          $(recallSolution).addClass("recall-solution column");
+          $(recallSolution).text("Solution: " + recallData.results[i].Remedy);
+          $(recallColumns).append(recallSolution);
         }
       },
       error: function (xhr, ajaxOptions, thrownError) {
@@ -489,8 +650,13 @@ $(function () {
     } else {
       mileage = mileageField.val();
     }
+
     $(historyEl).empty();
     saveHistory(make, model, year, mileage);
+
+    // DO NOT ERASE!!!!
+    // Do not run this function until ready
+    // getMaintenance(make, model, year, mileage);
     dummyMaintenance(make, model, year, mileage);
   });
 
@@ -538,44 +704,3 @@ $(function () {
   });
 });
 // End of Script.
-
-// DO NOT ERASE!!!!
-
-// Get Maintenance: Cost 5 creds a pop. Don't run until work finished. Run Dummy maintenance
-// function getMaintenance() {
-//   $.ajax({
-//     url:
-//       "http://api.carmd.com/v3.0/maint?year=" +
-//       year +
-//       "&make=" +
-//       make +
-//       "&model=" +
-//       model +
-//       "&mileage=" +
-//       miles +
-//       "&unit=" +
-//       "mi",
-//     headers: {
-//       "content-type": "application/json",
-//       authorization: "Basic MTMwMDZmOWItMzI4ZS00NGY2LTllNjUtZjU4M2IzNDU0ZjAy",
-//       "partner-token": "f6b5f0bcc60046e9b4ac768200062f4c",
-//     },
-//     type: "GET",
-//     dataType: "json",
-//     success: function (data) {
-//       console.log(data);
-//     },
-//     error: function (xhr, ajaxOptions, thrownError) {
-//       console.log(xhr.status);
-//       console.log(ajaxOptions);
-//       console.log(thrownError);
-//       if (xhr.status !== 200) {
-//         $(".modal").addClass("is-active")
-//       }
-//       return;
-//     },
-//   });
-// }
-
-// Do not run this function until ready
-// getMaintenance();
