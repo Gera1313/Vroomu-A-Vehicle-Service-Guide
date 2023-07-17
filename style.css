@@ -54,11 +54,11 @@ fieldset {
 }
 
 .border2 {
-  border: 2px solid rgb(231, 182, 22);
+  border: 2px solid rgb(231, 81, 22);
 }
 
 .border3 {
-  border: 2px solid rgb(38, 196, 77);
+  border: 2px solid rgb(196, 141, 38);
 }
 
 .recall-header,
@@ -84,18 +84,18 @@ fieldset {
 }
 
 .recall-item {
-  border: 2px solid rgb(38, 196, 77);
+  border: 2px solid rgb(196, 88, 38);
   padding: 1rem;
 }
 
 .maint-section {
-  border: 2px solid rgb(38, 196, 77);
+  border: 2px solid rgb(196, 180, 38);
   padding: 1rem;
   margin: 20px 10px 10px 10px;
 }
 
 .maint-list {
-  border: 2px solid rgb(29, 116, 216);
+  border: 2px solid rgb(216, 66, 29);
   padding: 10px;
   margin: 10px;
 }
@@ -147,9 +147,9 @@ a:hover,
 .nav-hover:hover {
   color: #180f0f;
   background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.767) 0%,
-    rgb(255, 255, 255) 100%
+    
+    rgba(202, 176, 29, 0.767) 0%,
+    rgb(224, 166, 8) 100%
   );
   border: 0.1px solid rgb(136, 93, 75);
   outline-color: #8b8b8b;
@@ -174,7 +174,7 @@ a:hover,
 }
 
 .card {
-  background-image: url(./Assets/Images/card1.png);
+  background-image: url(./Assets/Images/giphy\ \(1\).gif);
   background-repeat: none;
   background-size: cover;
   background-blend-mode: multiply;
@@ -182,7 +182,7 @@ a:hover,
 }
 
 .card-2 {
-  background-image: url(./Assets/Images/card2.png);
+  background-image: url(./Assets/Images/download\ \(1\).gif);
   background-repeat: none;
   background-size: cover;
   background-blend-mode: multiply;
@@ -190,7 +190,7 @@ a:hover,
 }
 
 #hero {
-  background-image: url(./Assets/Images/hero.png),
+  background-image: url(./Assets/Images/giphy\ \(1\).gif),
     linear-gradient(to right, #fdfbfb, #fcfcfc);
   background-repeat: none;
   background-size: cover;
@@ -199,7 +199,7 @@ a:hover,
 }
 
 .header-img {
-  background-image: url(./Assets/Images/header.png),
+  background-image: url(./Assets/Images/giphy\ \(1\).gif),
     linear-gradient(to right, #fdfbfb, #fcfcfc);
   background-repeat: none;
   background-size: cover;
@@ -228,7 +228,7 @@ textarea,
 input,
 select {
   font-family: "Roboto", sans-serif;
-  background: rgba(171, 185, 45, 0.596);
+  background: rgba(212, 116, 37, 0.596);
   border-radius: 3px;
   border: none;
   outline: 0.1px solid rgba(24, 15, 15, 0);
