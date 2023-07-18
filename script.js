@@ -339,7 +339,7 @@ $(function () {
     });
   }
 
-  // Obtains Recall Data and Information for Chosen Make, Model, Year
+  // Obtains Recall Data and Information for Chosen Make, Model, Year.
   function getRecallData(make, model, year) {
     $.ajax({
       url:
@@ -410,7 +410,7 @@ $(function () {
     });
   }
 
-  // Appends Vehicle's Vin Data to the Form
+  // Appends Vehicle's Vin Data to the Form.
   function appendFormData(vehicleData) {
     $(yearTxt).val(vehicleData.year);
     $(makeTxt).val(vehicleData.make);
@@ -423,7 +423,7 @@ $(function () {
     $(fuelTypeField).val("Fuel Type: " + vehicleData.fuel);
   }
 
-  // Function Obtains Vehicle Information by Vin Number
+  // Function Obtains Vehicle Information by Vin Number.
   function getVinData() {
     $.ajax({
       url:
@@ -551,10 +551,10 @@ $(function () {
       year = yearField.val();
     }
 
-    if (mileageField.val() === null) {
+    if (mileageField.val() === null || mileageField.val() === "") {
       mileage = mileageTxt.val().trim();
     } else {
-      mileage = mileageField.val();
+      mileage = mileageField.val().trim();
     }
 
     console.log(make);
@@ -568,7 +568,6 @@ $(function () {
     // DO NOT ERASE!
     // Do not run this function until ready.
     getMaintenance(make, model, year, mileage);
-    // dummyMaintenance(make, model, year, mileage);
   });
 
   // Resets our Default Homepage Layout and clears field values and local storage.

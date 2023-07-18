@@ -52,14 +52,6 @@ fieldset {
   z-index: 7;
 }
 
-.border2 {
-  border: 2px solid rgb(231, 81, 22);
-}
-
-.border3 {
-  border: 2px solid rgb(196, 141, 38);
-}
-
 .recall-header,
 .maint-header,
 .due-maint {
@@ -83,9 +75,11 @@ fieldset {
 }
 
 .recall-item {
-  border: 2px solid rgb(196, 88, 38);
+  border-radius: 5px;
+  border: 2px solid rgba(58, 32, 20, 0.76);
   padding: 1rem;
   background-image: url(./Assets/Images/hero.png) ;
+  background-size: cover;
 }
 
 .maint-section {
@@ -217,13 +211,14 @@ a:hover,
   background-image: url(./Assets/Images/giphy\ \(1\).gif),
     linear-gradient(to right, #fdfbfb, #fcfcfc);
   background-repeat: none;
+  background-position: center;
   background-size: cover;
   background-blend-mode: luminosity;
   border: 0.1px solid rgb(46, 31, 25);
 }
 
 .header-img {
-  background-image: url(./Assets/Images/giphy\ \(1\).gif),
+  background-image: url(./Assets/Images/header.png),
     linear-gradient(to right, #fdfbfb, #fcfcfc);
   background-repeat: none;
   background-size: cover;
