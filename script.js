@@ -319,8 +319,8 @@ $(function () {
         "mi",
       headers: {
         "content-type": "application/json",
-        "authorization": "Basic NjNjMmQ4NzItZGE1Yy00ZmY1LWJkZDUtZjJiOGI1ZjNkZjU4",
-        "partner-token": "5fad382e81984c61a57ac3596de1e907",
+        "authorization": "Basic MGViMDkyNGYtOGEyNS00NjhmLTg1ZTctMzFkZGQ4YTFkOGI5",
+        "partner-token": "5d666d47e23c425fa4ac2199613acc86",
       },
       type: "GET",
       dataType: "json",
@@ -567,7 +567,7 @@ $(function () {
 
     // DO NOT ERASE!
     // Do not run this function until ready.
-    getMaintenance(make, model, year, mileage);
+    // getMaintenance(make, model, year, mileage);
   });
 
   // Resets our Default Homepage Layout and clears field values and local storage.
