@@ -67,19 +67,19 @@ fieldset {
 }
 
 .recall-header:hover{
-  background-color: antiquewhite;
+  background-color: rgb(155, 137, 114);
 }
 .recall-item:hover{
-  background-color: antiquewhite;
+  background-color: rgb(175, 155, 129);
 }
 .maint-header:hover{
-  background-color: antiquewhite;
+  background-color: rgb(160, 142, 118);
 }
 .maint-list:hover{
-  background-color: antiquewhite;
+  background-color: rgb(180, 158, 129);
 }
 .maint-section:hover{
-  background-color: antiquewhite;
+  background-color: rgb(175, 149, 116);
 }
 
 .recall-item {
