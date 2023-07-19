@@ -28,7 +28,7 @@ N/A
 
 ## Usage
 
-Navagate to the Webpage using the following link: 
+Navagate to the Webpage using the following link: [https://gera1313.github.io/Vroomu-A-Vehicle-Service-Guide/](https://gera1313.github.io/Vroomu-A-Vehicle-Service-Guide/)
 
 Presentation Slide Includes more Information about the Webpage: [https://docs.google.com/presentation/d/1YVu2qAdMW9xAm5TcOtdjgyRo9R-Mqvp2GSEeAZbZSt4/edit#slide=id.p](https://docs.google.com/presentation/d/1YVu2qAdMW9xAm5TcOtdjgyRo9R-Mqvp2GSEeAZbZSt4/edit#slide=id.p)
 
