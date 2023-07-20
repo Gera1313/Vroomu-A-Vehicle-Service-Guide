@@ -423,7 +423,7 @@ $(function () {
     $(fuelTypeField).val("Fuel Type: " + vehicleData.fuel);
   }
 
-  // Function Obtains Vehicle Information by Vin Number.
+  // Function Obtains Vehicle Information by Vin Number for Vehicle Specs Card.
   function getVinData() {
     $.ajax({
       url:
@@ -567,7 +567,7 @@ $(function () {
 
     // DO NOT ERASE!
     // Do not run this function until ready.
-    // getMaintenance(make, model, year, mileage);
+    getMaintenance(make, model, year, mileage);
   });
 
   // Resets our Default Homepage Layout and clears field values and local storage.
@@ -575,6 +575,8 @@ $(function () {
     event.preventDefault();
     localStorage.clear();
     $(historyEl).empty();
+    $(recallEl).empty();
+    $(maintEl).empty();
 
     $("#dropdown").removeClass("hidden").addClass("visible");
     $("#textbox").removeClass("visible").addClass("hidden");
@@ -587,6 +589,7 @@ $(function () {
     $(yearTxt).val(null);
     $(makeTxt).val(null);
     $(modelTxt).val(null);
+    $(vinChoiceEl).val(null);
   });
 
   // Navigation Contributors Dropdown.
